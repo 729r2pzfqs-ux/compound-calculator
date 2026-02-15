@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Сложных Процентов | Бесплатный Инвестиционный Калькулятор</title>
+    <meta name="description" content="Бесплатный калькулятор сложных процентов. Посмотрите, как растут ваши инвестиции с ежедневным, ежемесячным или годовым начислением.">
+    <link rel="canonical" href="https://compoundcalc.org/ru/">
+    <link rel="alternate" hreflang="en" href="https://compoundcalc.org/">
+    <link rel="alternate" hreflang="ru" href="https://compoundcalc.org/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://compoundcalc.org/">
+    <meta property="og:title" content="Калькулятор Сложных Процентов | Бесплатный Инвестиционный Калькулятор">
+    <meta property="og:url" content="https://compoundcalc.org/ru/">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .input-field { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .input-field:focus { border-color: #10b981; outline: none; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
+        .btn-primary { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .btn-primary:hover { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+        .result-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%); }
+    </style>
+</head>
+<body class="text-white">
+    <header class="py-6 px-4">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="/ru/" class="flex items-center gap-3">
+                <span class="text-3xl">📈</span>
+                <span class="text-xl font-bold">Compound<span class="text-emerald-400">Calc</span></span>
+            </a>
+            <div class="flex items-center gap-4">
+                <select id="currency" class="bg-transparent border border-white/20 rounded-lg px-3 py-1 text-sm">
+                    <option value="$">$ USD</option><option value="€">€ EUR</option><option value="£">£ GBP</option>
+                    <option value="¥">¥ JPY</option><option value="₹">₹ INR</option>
+                </select>
+                <div class="relative" id="langDropdownContainer">
+        <button id="langDropdownBtn" class="text-white/70 hover:text-white text-lg md:text-2xl" onclick="event.stopPropagation(); document.getElementById('langDropdown').classList.toggle('hidden')">🇷🇺</button>
+        <div id="langDropdown" class="hidden absolute right-0 mt-2 w-16 bg-slate-800/95 rounded-lg z-50 max-h-[70vh] overflow-y-auto"><a href="/" class="block px-3 py-2 text-sm hover:bg-white/10">🇺🇸</a><a href="/de/" class="block px-3 py-2 text-sm hover:bg-white/10">🇩🇪</a><a href="/es/" class="block px-3 py-2 text-sm hover:bg-white/10">🇪🇸</a><a href="/fr/" class="block px-3 py-2 text-sm hover:bg-white/10">🇫🇷</a><a href="/pt/" class="block px-3 py-2 text-sm hover:bg-white/10">🇧🇷</a><a href="/zh/" class="block px-3 py-2 text-sm hover:bg-white/10">🇨🇳</a><a href="/ja/" class="block px-3 py-2 text-sm hover:bg-white/10">🇯🇵</a><a href="/hi/" class="block px-3 py-2 text-sm hover:bg-white/10">🇮🇳</a><a href="/ar/" class="block px-3 py-2 text-sm hover:bg-white/10">🇸🇦</a><a href="/ru/" class="block px-3 py-2 text-sm hover:bg-white/10">🇷🇺</a><a href="/tr/" class="block px-3 py-2 text-sm hover:bg-white/10">🇹🇷</a></div>
+    </div>
+            </div>
+        </div>
+    </header>
+    <main class="px-4 pb-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-3">Калькулятор <span class="text-emerald-400">Сложных Процентов</span></h1>
+                <p class="text-white/60 text-lg">Посмотрите, как ваши деньги растут со временем</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass rounded-2xl p-6">
+                    <h2 class="text-xl font-semibold mb-6 flex items-center gap-2"><span>🧮</span> Введите ваши данные</h2>
+                    <div class="space-y-5">
+                        <div><label class="block text-sm text-white/70 mb-2">Начальные Инвестиции</label>
+                            <div class="relative"><span id="currencySymbol" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50">$</span>
+                            <input type="number" id="principal" value="10000" min="0" step="100" class="input-field w-full rounded-xl py-3 pl-10 pr-4 text-lg font-medium"></div></div>
+                        <div><label class="block text-sm text-white/70 mb-2">Ежемесячный Взнос</label>
+                            <div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50">$</span>
+                            <input type="number" id="monthly" value="500" min="0" step="50" class="input-field w-full rounded-xl py-3 pl-10 pr-4 text-lg font-medium"></div></div>
+                        <div><label class="block text-sm text-white/70 mb-2">Годовая Процентная Ставка</label>
+                            <div class="relative"><input type="number" id="rate" value="7" min="0" max="100" step="0.1" class="input-field w-full rounded-xl py-3 px-4 pr-10 text-lg font-medium">
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50">%</span></div></div>
+                        <div><label class="block text-sm text-white/70 mb-2">Период</label>
+                            <div class="relative"><input type="number" id="years" value="20" min="1" max="100" class="input-field w-full rounded-xl py-3 px-4 pr-16 text-lg font-medium">
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50">лет</span></div></div>
+                        <div><label class="block text-sm text-white/70 mb-2">Частота Начисления</label>
+                            <select id="frequency" class="input-field w-full rounded-xl py-3 px-4 text-lg">
+                                <option value="365">Ежедневно</option><option value="12" selected>Ежемесячно</option>
+                                <option value="4">Ежеквартально</option><option value="1">Ежегодно</option></select></div>
+                        <button onclick="calculate()" class="btn-primary w-full py-4 rounded-xl text-lg font-semibold transition-all hover:scale-[1.02]">Рассчитать Рост 📊</button>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="result-card glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1">Будущая Стоимость</p><p id="futureValue" class="text-2xl md:text-3xl font-bold text-emerald-400">$260,464</p></div>
+                        <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1">Общий Процент</p><p id="totalInterest" class="text-2xl md:text-3xl font-bold text-amber-400">$130,464</p></div>
+                        <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1">Всего Вкладов</p><p id="totalDeposits" class="text-xl md:text-2xl font-bold">$130,000</p></div>
+                        <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1">Заработанные Проценты</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
+                    </div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">Рост со Временем</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Сложные vs Простые Проценты</h3>
+                        <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Простые Проценты</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
+                        <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Сложные Проценты</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
+                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">Вы зарабатываете {amount} больше со сложными процентами!</p></div>
+                </div>
+            </div>
+            <div class="mt-12 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-4">Что такое Сложные Проценты?</h2>
+                <p class="text-white/70 mb-4">Сложные проценты - это проценты, рассчитанные на начальный капитал и накопленные проценты за предыдущие периоды.</p>
+                <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc</p></div></footer>
+    <script>
+        let chart = null;
+        function formatCurrency(value) { const c = document.getElementById('currency').value; return c + value.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+        function calculate() {
+            const P = parseFloat(document.getElementById('principal').value) || 0;
+            const PMT = parseFloat(document.getElementById('monthly').value) || 0;
+            const r = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+            const t = parseInt(document.getElementById('years').value) || 1;
+            const n = parseInt(document.getElementById('frequency').value) || 12;
+            const FV_principal = P * Math.pow(1 + r/n, n*t);
+            let FV_contributions = 0;
+            if (PMT > 0 && r > 0) { const mr = r / 12; const tm = t * 12; FV_contributions = PMT * ((Math.pow(1 + mr, tm) - 1) / mr); }
+            else if (PMT > 0) { FV_contributions = PMT * t * 12; }
+            const totalFV = FV_principal + FV_contributions;
+            const totalDep = P + (PMT * t * 12);
+            const totalInt = totalFV - totalDep;
+            const intPct = totalDep > 0 ? (totalInt / totalDep * 100) : 0;
+            const simple = P + (P * r * t) + (PMT * t * 12);
+            document.getElementById('futureValue').textContent = formatCurrency(totalFV);
+            document.getElementById('totalInterest').textContent = formatCurrency(totalInt);
+            document.getElementById('totalDeposits').textContent = formatCurrency(totalDep);
+            document.getElementById('interestPercent').textContent = intPct.toFixed(0) + '%';
+            document.getElementById('simpleInterest').textContent = formatCurrency(simple);
+            document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
+            document.getElementById('extraEarned').textContent = 'Вы зарабатываете {amount} больше со сложными процентами!'.replace('{amount}', formatCurrency(totalFV - simple));
+            updateChart(P, PMT, r, t, n);
+        }
+        function updateChart(P, PMT, r, t, n) {
+            const labels = [], compoundData = [], depositData = [];
+            for (let y = 0; y <= t; y++) {
+                labels.push('Year ' + y);
+                const fvp = P * Math.pow(1 + r/n, n*y);
+                let fvc = 0;
+                if (PMT > 0 && r > 0) { const mr = r / 12; fvc = PMT * ((Math.pow(1 + mr, y*12) - 1) / mr); }
+                else if (PMT > 0) { fvc = PMT * y * 12; }
+                compoundData.push(fvp + fvc); depositData.push(P + (PMT * y * 12));
+            }
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
+                type: 'line', data: { labels, datasets: [
+                    { label: 'Total', data: compoundData, borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.1)', fill: true, tension: 0.4 },
+                    { label: 'Deposits', data: depositData, borderColor: '#6b7280', borderDash: [5,5], fill: false }
+                ]},
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: 'rgba(255,255,255,0.7)' } } },
+                    scales: { x: { ticks: { color: 'rgba(255,255,255,0.5)' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        y: { ticks: { color: 'rgba(255,255,255,0.5)', callback: v => '$'+(v/1000).toFixed(0)+'k' }, grid: { color: 'rgba(255,255,255,0.05)' } } } }
+            });
+        }
+        document.getElementById('currency').addEventListener('change', function() { document.getElementById('currencySymbol').textContent = this.value; calculate(); });
+        document.querySelectorAll('input, select').forEach(el => el.addEventListener('input', calculate));
+        document.addEventListener('click', () => document.getElementById('langDropdown').classList.add('hidden'));
+        calculate();
+    </script>
+</body>
+</html>
