@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複利の初心者ガイド | 仕組みを解説</title>
+    <meta name="description" content="複利は初めてですか？仕組み、世界第8の不思議と呼ばれる理由、富を築くための活用法を学びましょう。">
+    <link rel="canonical" href="https://compoundcalc.ai/articles/beginners-guide/ja/">
+    
+    <meta property="og:title" content="複利の初心者ガイド">
+    <meta property="og:description" content="複利は初めてですか？仕組み、世界第8の不思議と呼ばれる理由、富を築くための活用法を学びましょう。">
+    <meta property="og:type" content="article">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"複利の初心者ガイド","description":"複利は初めてですか？仕組み、世界第8の不思議と呼ばれる理由、富を築くための活用法を学びましょう。","author":{"@type":"Organization","name":"CompoundCalc.ai"},"publisher":{"@type":"Organization","name":"CompoundCalc.ai"},"datePublished":"2026-02-20","dateModified":"2026-02-20"}
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .prose { line-height: 1.8; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #818cf8; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #c4b5fd; }
+        .prose p { margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul, .prose ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul { list-style: disc; }
+        .prose ol { list-style: decimal; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #f1f5f9; }
+        .formula { background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); padding: 1rem; border-radius: 0.75rem; font-family: monospace; text-align: center; margin: 1rem 0; color: #c4b5fd; font-size: 1.25rem; }
+        .step { background: rgba(255,255,255,0.03); border-left: 3px solid #818cf8; padding: 1rem; margin: 0.5rem 0; }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-540W3EEBWX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-540W3EEBWX');</script>
+</head>
+<body class="text-white">
+    <header class="py-6 px-4">
+        <div class="max-w-3xl mx-auto flex items-center justify-between">
+            <a href="/ja/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-xl">📈</div>
+                <span class="text-xl font-bold">CompoundCalc</span>
+            </a>
+            <a href="/ja/" class="text-indigo-400 hover:text-indigo-300 text-sm">← 計算機</a>
+        </div>
+    </header>
+
+    <main class="px-4 pb-16">
+        <article class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">複利の初心者ガイド</h1>
+                <p class="text-slate-400">あなたを豊かにするシンプルな概念</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:p-10 prose">
+                <p class="text-lg">アルバート・アインシュタインは複利を「世界第8の不思議」と呼んだと言われています。彼が言ったかどうかはともかく、複利の力は<strong>本物で驚くべきもの</strong>です。初心者が知っておくべきことをすべてご紹介します。</p>
+                
+                <h2>複利とは？</h2>
+                <p>複利とは、利息に対して利息が付くことです。元本投資からの利益だけでなく、その利益からも利益を得ることができます。</p>
+                <p class="italic text-indigo-300">丘を転がり落ちる雪玉を想像してください。最初は小さいですが、転がるにつれてより多くの雪を拾います。大きくなればなるほど、一回転ごとにより多くの雪を拾います。複利でのお金も同じように働きます。</p>
+                
+                <h2>どのように機能するの？</h2>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">1年目：預金に対して利息を得る</p>
+                    <p class="mb-0">10万円 × 10% = 1万円の利息 → 残高：11万円</p>
+                </div>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">2年目：11万円（10万円だけでなく）に対して利息を得る</p>
+                    <p class="mb-0">11万円 × 10% = 1.1万円の利息 → 残高：12.1万円</p>
+                </div>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">3年目：12.1万円に対して利息を得る</p>
+                    <p class="mb-0">12.1万円 × 10% = 1.21万円の利息 → 残高：13.31万円</p>
+                </div>
+                <p class="mt-4 p-4 bg-indigo-500/10 rounded-xl">1万円、1.1万円、1.21万円と稼いだことに気づきましたか？これが複利の実際の働きです — 毎年前年より多く稼ぎます。</p>
+                
+                <h2>時間の魔法</h2>
+                <p>複利の本当の力は<strong>時間</strong>から来ます。お金が複利で運用される期間が長いほど、結果は劇的になります：</p>
+                <div class="overflow-x-auto my-4">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="py-2 text-left text-slate-400">年数</th>
+                                <th class="py-2 text-right text-slate-400">100万円の7%での価値</th>
+                                <th class="py-2 text-right text-slate-400">獲得利息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5"><td class="py-2">10</td><td class="py-2 text-right">$19,672</td><td class="py-2 text-right text-green-400">$9,672</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">20</td><td class="py-2 text-right">$38,697</td><td class="py-2 text-right text-green-400">$28,697</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">30</td><td class="py-2 text-right">$76,123</td><td class="py-2 text-right text-green-400">$66,123</td></tr>
+                            <tr><td class="py-2">40</td><td class="py-2 text-right">$149,745</td><td class="py-2 text-right text-green-400">$139,745</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>72の法則</h2>
+                <p>お金が2倍になるまでの時間を素早く見積もる方法：</p>
+                <div class="formula">72 ÷ 金利 = 2倍になるまでの年数</div>
+                <h3>例：</h3>
+                <ul><li>6%の場合：72 ÷ 6 = 12年で2倍</li><li>8%の場合：72 ÷ 8 = 9年で2倍</li><li>10%の場合：72 ÷ 10 = 7.2年で2倍</li></ul>
+                
+                <h2>複利の頻度が重要</h2>
+                <p>利息は異なる間隔で複利計算できます：</p>
+                <ul><li><strong>年次</strong> — 年1回</li><li><strong>月次</strong> — 年12回</li><li><strong>日次</strong> — 年365回</li><li><strong>連続</strong> — 常時</li></ul>
+                <p class="text-sm text-slate-500">より頻繁な複利 = わずかに高いリターン。日次複利の普通預金は、同じ金利で年次複利のものより少し多く稼げます。</p>
+                
+                <h2>なぜ早く始めることが重要か</h2>
+                <p>2人を考えてみましょう：</p>
+                <ul>
+                    <li><strong>Alice</strong>は25歳から35歳まで年間50万円を投資（10年間、合計500万円）し、その後やめます。</li>
+                    <li><strong>Bob</strong>は35歳から65歳まで年間50万円を投資（30年間、合計1500万円）します。</li>
+                </ul>
+                <p class="p-4 bg-green-500/10 rounded-xl border border-green-500/30">65歳時点で（7%のリターンを想定）：<br>Aliceは<strong>約6,000万円</strong><br>Bobは<strong>約5,400万円</strong></p>
+                <p><strong>Aliceはより少ないお金をより短い期間投資しましたが、最終的にはより多くを持っています — 早く始めたからです。時間はあなたの最大の資産です。</strong></p>
+                
+                <h2>複利を最大化する5つのヒント</h2>
+                <ol>
+                    <li><strong>今すぐ始める</strong> — 始めるのに最適な時期は昨日でした。次に良いのは今日です。</li>
+                    <li><strong>一貫性を保つ</strong> — 定期的な積立が複利効果を加速させます。</li>
+                    <li><strong>配当を再投資する</strong> — 利益を引き出さず、複利で運用しましょう。</li>
+                    <li><strong>手数料を最小限に</strong> — 高い手数料はリターンを蝕み、あなたに不利に複利効果を発揮します。</li>
+                    <li><strong>忍耐強く</strong> — 複利はゆっくりとしたプロセスです。魔法は後年に起こります。</li>
+                </ol>
+                
+                <h2>複利が見られる場所</h2>
+                <ul><li>普通預金</li><li>定期預金</li><li>債券</li><li>株式市場投資</li><li>退職口座（401k、IRA）</li><li>不動産価値上昇</li></ul>
+                
+                <h2>⚠️ ダークサイド：借金の複利</h2>
+                <p class="p-4 bg-red-500/10 rounded-xl border border-red-500/30">複利は借金では不利に働きます。クレジットカードの利息は複利なので、利息に利息を払うことになります。50万円の残高で年利20%、最低支払いだけでは、返済に20年以上かかり、利息だけで80万円以上かかる可能性があります。</p>
+                
+                <div class="mt-8 p-6 bg-indigo-500/10 rounded-xl border border-indigo-500/30">
+                    <p class="text-indigo-400 font-semibold mb-2">🧮 実際に見てみよう</p>
+                    <p class="mb-4">複利計算機で、あなたのお金がどれだけ成長できるか確認しましょう。</p>
+                    <a href="/ja/" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl transition">計算機を開く →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-8 px-4 border-t border-white/10">
+        <div class="max-w-3xl mx-auto text-center text-slate-500 text-sm">
+            <p>© 2026 CompoundCalc.ai</p>
+        </div>
+    </footer>
+</body>
+</html>

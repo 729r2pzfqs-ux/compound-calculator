@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复利入门指南 | 工作原理</title>
+    <meta name="description" content="复利新手？了解它如何运作，为什么被称为世界第八大奇迹，以及如何用它来积累财富。">
+    <link rel="canonical" href="https://compoundcalc.ai/articles/beginners-guide/zh/">
+    
+    <meta property="og:title" content="复利入门指南">
+    <meta property="og:description" content="复利新手？了解它如何运作，为什么被称为世界第八大奇迹，以及如何用它来积累财富。">
+    <meta property="og:type" content="article">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"复利入门指南","description":"复利新手？了解它如何运作，为什么被称为世界第八大奇迹，以及如何用它来积累财富。","author":{"@type":"Organization","name":"CompoundCalc.ai"},"publisher":{"@type":"Organization","name":"CompoundCalc.ai"},"datePublished":"2026-02-20","dateModified":"2026-02-20"}
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .prose { line-height: 1.8; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #818cf8; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #c4b5fd; }
+        .prose p { margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul, .prose ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul { list-style: disc; }
+        .prose ol { list-style: decimal; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #f1f5f9; }
+        .formula { background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); padding: 1rem; border-radius: 0.75rem; font-family: monospace; text-align: center; margin: 1rem 0; color: #c4b5fd; font-size: 1.25rem; }
+        .step { background: rgba(255,255,255,0.03); border-left: 3px solid #818cf8; padding: 1rem; margin: 0.5rem 0; }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-540W3EEBWX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-540W3EEBWX');</script>
+</head>
+<body class="text-white">
+    <header class="py-6 px-4">
+        <div class="max-w-3xl mx-auto flex items-center justify-between">
+            <a href="/zh/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-xl">📈</div>
+                <span class="text-xl font-bold">CompoundCalc</span>
+            </a>
+            <a href="/zh/" class="text-indigo-400 hover:text-indigo-300 text-sm">← 计算器</a>
+        </div>
+    </header>
+
+    <main class="px-4 pb-16">
+        <article class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">复利入门指南</h1>
+                <p class="text-slate-400">能让你致富的简单概念</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:p-10 prose">
+                <p class="text-lg">据说阿尔伯特·爱因斯坦称复利为"世界第八大奇迹"。不管他说没说过，复利的力量是<strong>真实而显著的</strong>。这里是初学者需要知道的一切。</p>
+                
+                <h2>什么是复利？</h2>
+                <p>复利是指你从利息中赚取利息。你不仅从原始投资中获得回报，还从你的回报中获得回报。</p>
+                <p class="italic text-indigo-300">把它想象成一个滚下山的雪球。它开始时很小，但在滚动过程中，它会收集更多的雪。它变得越大，每次旋转收集的雪就越多。你的钱在复利下也是这样工作的。</p>
+                
+                <h2>它是如何工作的？</h2>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">第1年：你从存款中赚取利息</p>
+                    <p class="mb-0">1,000美元 × 10% = 100美元利息 → 余额：1,100美元</p>
+                </div>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">第2年：你从1,100美元（不仅仅是1,000美元）赚取利息</p>
+                    <p class="mb-0">1,100美元 × 10% = 110美元利息 → 余额：1,210美元</p>
+                </div>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">第3年：你从1,210美元赚取利息</p>
+                    <p class="mb-0">1,210美元 × 10% = 121美元利息 → 余额：1,331美元</p>
+                </div>
+                <p class="mt-4 p-4 bg-indigo-500/10 rounded-xl">注意到你赚了100美元，然后110美元，然后121美元吗？这就是复利在起作用——每年你赚的比上一年多。</p>
+                
+                <h2>时间的魔力</h2>
+                <p>复利的真正力量来自于<strong>时间</strong>。你的钱复利的时间越长，结果就越惊人：</p>
+                <div class="overflow-x-auto my-4">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="py-2 text-left text-slate-400">年数</th>
+                                <th class="py-2 text-right text-slate-400">10,000美元在7%下的价值</th>
+                                <th class="py-2 text-right text-slate-400">赚取的利息</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5"><td class="py-2">10</td><td class="py-2 text-right">$19,672</td><td class="py-2 text-right text-green-400">$9,672</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">20</td><td class="py-2 text-right">$38,697</td><td class="py-2 text-right text-green-400">$28,697</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">30</td><td class="py-2 text-right">$76,123</td><td class="py-2 text-right text-green-400">$66,123</td></tr>
+                            <tr><td class="py-2">40</td><td class="py-2 text-right">$149,745</td><td class="py-2 text-right text-green-400">$139,745</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>72法则</h2>
+                <p>快速估算资金翻倍所需时间的方法：</p>
+                <div class="formula">72 ÷ 利率 = 翻倍所需年数</div>
+                <h3>示例：</h3>
+                <ul><li>6%时：72 ÷ 6 = 12年翻倍</li><li>8%时：72 ÷ 8 = 9年翻倍</li><li>10%时：72 ÷ 10 = 7.2年翻倍</li></ul>
+                
+                <h2>复利频率很重要</h2>
+                <p>利息可以按不同间隔复利：</p>
+                <ul><li><strong>每年</strong> — 每年一次</li><li><strong>每月</strong> — 每年12次</li><li><strong>每日</strong> — 每年365次</li><li><strong>连续</strong> — 持续不断</li></ul>
+                <p class="text-sm text-slate-500">更频繁的复利 = 略高的回报。每日复利的储蓄账户将比同利率下每年复利的账户多赚一点。</p>
+                
+                <h2>为什么尽早开始很重要</h2>
+                <p>考虑两个人：</p>
+                <ul>
+                    <li><strong>Alice</strong> 从25岁到35岁每年投资5,000美元（10年，共50,000美元），然后停止。</li>
+                    <li><strong>Bob</strong> 从35岁到65岁每年投资5,000美元（30年，共150,000美元）。</li>
+                </ul>
+                <p class="p-4 bg-green-500/10 rounded-xl border border-green-500/30">在65岁时（假设7%回报）：<br>Alice有<strong>602,070美元</strong><br>Bob有<strong>540,741美元</strong></p>
+                <p><strong>Alice投资更少的钱，更少的年数，但最终拥有更多——因为她开始得更早。时间是你最大的资产。</strong></p>
+                
+                <h2>最大化复利的5个技巧</h2>
+                <ol>
+                    <li><strong>现在就开始</strong> — 开始的最佳时间是昨天。第二好的是今天。</li>
+                    <li><strong>保持一致</strong> — 定期投资能增强复利效果。</li>
+                    <li><strong>再投资股息</strong> — 不要取出利润；让它们继续复利。</li>
+                    <li><strong>最小化费用</strong> — 高费用会侵蚀你的回报，并对你产生复利效应。</li>
+                    <li><strong>要有耐心</strong> — 复利是一个缓慢的过程。魔力发生在后来的几年。</li>
+                </ol>
+                
+                <h2>在哪里可以找到复利</h2>
+                <ul><li>储蓄账户</li><li>定期存款</li><li>债券</li><li>股票市场投资</li><li>退休账户</li><li>房地产增值</li></ul>
+                
+                <h2>⚠️ 阴暗面：债务上的复利</h2>
+                <p class="p-4 bg-red-500/10 rounded-xl border border-red-500/30">复利在债务上对你不利。信用卡利息会复利，意味着你在利息上支付利息。5,000美元的余额，年利率20%，只付最低还款额，可能需要20多年才能还清，利息超过8,000美元。</p>
+                
+                <div class="mt-8 p-6 bg-indigo-500/10 rounded-xl border border-indigo-500/30">
+                    <p class="text-indigo-400 font-semibold mb-2">🧮 看看实际效果</p>
+                    <p class="mb-4">使用我们的复利计算器，看看你的钱能增长多少。</p>
+                    <a href="/zh/" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl transition">打开计算器 →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-8 px-4 border-t border-white/10">
+        <div class="max-w-3xl mx-auto text-center text-slate-500 text-sm">
+            <p>© 2026 CompoundCalc.ai</p>
+        </div>
+    </footer>
+</body>
+</html>
