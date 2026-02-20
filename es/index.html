@@ -20,6 +20,14 @@
     <meta property="og:title" content="Calculadora de Interés Compuesto | Calculadora de Inversiones Gratis">
     <meta property="og:url" content="https://compoundcalc.ai/es/">
     <meta property="og:locale" content="es_ES">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "¿Qué es el interés compuesto?", "acceptedAnswer": {"@type": "Answer", "text": "El interés compuesto es el interés calculado sobre su capital inicial y también sobre los intereses acumulados de períodos anteriores. A diferencia del interés simple, su dinero crece exponencialmente."}},
+        {"@type": "Question", "name": "¿Con qué frecuencia debe capitalizarse el interés?", "acceptedAnswer": {"@type": "Answer", "text": "Una capitalización más frecuente genera mayores rendimientos. La capitalización diaria gana algo más que la mensual, pero la diferencia es mínima para la mayoría de las inversiones."}},
+        {"@type": "Question", "name": "¿Qué es la Regla del 72?", "acceptedAnswer": {"@type": "Answer", "text": "La Regla del 72 es una forma rápida de estimar cuánto tiempo tarda su dinero en duplicarse. Divida 72 entre su tasa de interés: al 7%, su dinero se duplica en aproximadamente 10.3 años."}},
+        {"@type": "Question", "name": "¿Por qué debería empezar a invertir temprano?", "acceptedAnswer": {"@type": "Answer", "text": "Debido al interés compuesto, empezar 10 años antes puede duplicar su cantidad final. El tiempo es su mayor activo en la construcción de riqueza."}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>Interés Ganado</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">Crecimiento a lo Largo del Tiempo</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> Regla del 72</h3>
+                        <p class="text-white/60 text-sm mb-2">Al <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> de interés, su dinero se duplica en:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 años</p>
+                        <p class="text-white/40 text-xs mt-2">Fórmula: 72 ÷ tasa de interés = años para duplicar</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Compuesto vs Interés Simple</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Interés Simple</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Interés Compuesto</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">¿Qué es el Interés Compuesto?</h2>
                 <p class="text-white/70 mb-4">El interés compuesto es el interés calculado sobre el capital inicial y también sobre los intereses acumulados de períodos anteriores.</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">¿Qué es el interés compuesto?</h3><p class="text-white/70 mt-1">El interés compuesto es el interés calculado sobre su capital inicial y también sobre los intereses acumulados. A diferencia del interés simple, su dinero crece exponencialmente con el tiempo.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Con qué frecuencia debe capitalizarse el interés?</h3><p class="text-white/70 mt-1">Una capitalización más frecuente genera mayores rendimientos. La capitalización diaria gana algo más que la mensual, pero la diferencia es mínima. El verdadero poder está en el tiempo.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Qué es un rendimiento realista?</h3><p class="text-white/70 mt-1">Cuentas de ahorro: 0.5-5%. Mercado de valores (S&P 500): 7-10% anual. Bonos: 5-8%. Bienes raíces: 8-12%. Siempre considere la inflación (2-3%).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Por qué debería empezar a invertir temprano?</h3><p class="text-white/70 mt-1">Debido al interés compuesto, empezar 10 años antes puede duplicar su cantidad final. Una persona de 25 años que invierte $500/mes al 7% tendrá $1.2M a los 65. Empezando a los 35, solo $567K.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Qué es la Regla del 72?</h3><p class="text-white/70 mt-1">La Regla del 72 es una forma rápida de estimar cuánto tiempo tarda su dinero en duplicarse. Divida 72 entre su tasa: al 7%, su dinero se duplica en unos 10.3 años (72 ÷ 7 = 10.3).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Cuál es la diferencia entre interés compuesto y simple?</h3><p class="text-white/70 mt-1">El interés simple solo se calcula sobre su capital original. El compuesto se calcula sobre capital más intereses acumulados. En 20 años al 7%, $10,000 crecen a $24,000 con interés simple, pero $38,700 con compuesto.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Cómo afectan las aportaciones mensuales al crecimiento?</h3><p class="text-white/70 mt-1">Las aportaciones regulares aceleran dramáticamente la acumulación de riqueza. Solo $200/mes añadidos a una inversión de $10,000 al 7% durante 20 años convierte $58,000 en depósitos en más de $150,000.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿El interés compuesto también funciona con deudas?</h3><p class="text-white/70 mt-1">Sí, y trabaja en su contra. Deudas de tarjeta de crédito al 20% crecen rápidamente por el interés compuesto. Un saldo de $5,000 con pagos mínimos puede tomar más de 20 años y costar $10,000+ en intereses.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Cuál es la mejor cuenta para interés compuesto?</h3><p class="text-white/70 mt-1">Para seguridad: cuentas de ahorro de alto rendimiento (4-5%). Para crecimiento: fondos indexados o ETFs del S&P 500 (históricamente 7-10%). Cuentas con ventajas fiscales maximizan el crecimiento compuesto.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">¿Qué tan precisa es esta calculadora?</h3><p class="text-white/70 mt-1">Esta calculadora proporciona proyecciones matemáticas precisas basadas en rendimientos constantes. Las inversiones reales fluctúan. Use estos resultados para planificar, no como garantías.</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = '¡Gana {amount} más con interés compuesto!'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' años';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {
