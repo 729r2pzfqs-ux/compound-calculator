@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bileşik Faiz Başlangıç Rehberi | Nasıl Çalışır</title>
+    <meta name="description" content="Bileşik faizde yeni misiniz? Nasıl çalıştığını, neden dünyanın 8. harikası dendiğini ve servet oluşturmak için nasıl kullanılacağını öğrenin.">
+    <link rel="canonical" href="https://compoundcalc.ai/articles/beginners-guide/tr/">
+    
+    <meta property="og:title" content="Bileşik Faiz Başlangıç Rehberi">
+    <meta property="og:description" content="Bileşik faizde yeni misiniz? Nasıl çalıştığını, neden dünyanın 8. harikası dendiğini ve servet oluşturmak için nasıl kullanılacağını öğrenin.">
+    <meta property="og:type" content="article">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Bileşik Faiz Başlangıç Rehberi","description":"Bileşik faizde yeni misiniz? Nasıl çalıştığını, neden dünyanın 8. harikası dendiğini ve servet oluşturmak için nasıl kullanılacağını öğrenin.","author":{"@type":"Organization","name":"CompoundCalc.ai"},"publisher":{"@type":"Organization","name":"CompoundCalc.ai"},"datePublished":"2026-02-20","dateModified":"2026-02-20"}
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .prose { line-height: 1.8; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #818cf8; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #c4b5fd; }
+        .prose p { margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul, .prose ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul { list-style: disc; }
+        .prose ol { list-style: decimal; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #f1f5f9; }
+        .formula { background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); padding: 1rem; border-radius: 0.75rem; font-family: monospace; text-align: center; margin: 1rem 0; color: #c4b5fd; font-size: 1.25rem; }
+        .step { background: rgba(255,255,255,0.03); border-left: 3px solid #818cf8; padding: 1rem; margin: 0.5rem 0; }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-540W3EEBWX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-540W3EEBWX');</script>
+</head>
+<body class="text-white">
+    <header class="py-6 px-4">
+        <div class="max-w-3xl mx-auto flex items-center justify-between">
+            <a href="/tr/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-xl">📈</div>
+                <span class="text-xl font-bold">CompoundCalc</span>
+            </a>
+            <a href="/tr/" class="text-indigo-400 hover:text-indigo-300 text-sm">← Hesaplayıcı</a>
+        </div>
+    </header>
+
+    <main class="px-4 pb-16">
+        <article class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Bileşik Faiz Başlangıç Rehberi</h1>
+                <p class="text-slate-400">Sizi zengin yapabilecek basit kavram</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:p-10 prose">
+                <p class="text-lg">Albert Einstein'ın bileşik faizi "dünyanın sekizinci harikası" dediği söylenir. Söylemiş olsun ya da olmasın, bileşik faizin gücü <strong>gerçek ve dikkat çekici</strong>. İşte bir başlangıcın bilmesi gereken her şey.</p>
+                
+                <h2>Bileşik Faiz Nedir?</h2>
+                <p>Bileşik faiz, faiziniz üzerinden faiz kazandığınız zamandır. Sadece orijinal yatırımınızdan getiri elde etmek yerine, getirilerinizden de getiri elde edersiniz.</p>
+                <p class="italic text-indigo-300">Tepeden aşağı yuvarlanan bir kar topu gibi düşünün. Küçük başlar, ama yuvarlandıkça daha fazla kar toplar. Büyüdükçe, her dönüşte daha fazla kar toplar. Bileşik faizle paranız da aynı şekilde çalışır.</p>
+                
+                <h2>Nasıl Çalışır?</h2>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">Yıl 1: Yatırımınız üzerinden faiz kazanırsınız</p>
+                    <p class="mb-0">1.000$ × %10 = 100$ faiz → Bakiye: 1.100$</p>
+                </div>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">Yıl 2: 1.100$ üzerinden faiz kazanırsınız (sadece 1.000$ değil)</p>
+                    <p class="mb-0">1.100$ × %10 = 110$ faiz → Bakiye: 1.210$</p>
+                </div>
+                <div class="step">
+                    <p class="font-semibold text-indigo-300">Yıl 3: 1.210$ üzerinden faiz kazanırsınız</p>
+                    <p class="mb-0">1.210$ × %10 = 121$ faiz → Bakiye: 1.331$</p>
+                </div>
+                <p class="mt-4 p-4 bg-indigo-500/10 rounded-xl">100$, sonra 110$, sonra 121$ kazandığınızı fark ettiniz mi? İşte bileşik faiz iş başında — her yıl öncekinden daha fazla kazanırsınız.</p>
+                
+                <h2>Zamanın Büyüsü</h2>
+                <p>Bileşik faizin gerçek gücü <strong>zaman</strong>dan gelir. Paranız ne kadar uzun süre bileşik faizle çalışırsa, sonuçlar o kadar dramatik olur:</p>
+                <div class="overflow-x-auto my-4">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="py-2 text-left text-slate-400">Yıl</th>
+                                <th class="py-2 text-right text-slate-400">%7'de 10.000$'ın Değeri</th>
+                                <th class="py-2 text-right text-slate-400">Kazanılan Faiz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5"><td class="py-2">10</td><td class="py-2 text-right">$19,672</td><td class="py-2 text-right text-green-400">$9,672</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">20</td><td class="py-2 text-right">$38,697</td><td class="py-2 text-right text-green-400">$28,697</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">30</td><td class="py-2 text-right">$76,123</td><td class="py-2 text-right text-green-400">$66,123</td></tr>
+                            <tr><td class="py-2">40</td><td class="py-2 text-right">$149,745</td><td class="py-2 text-right text-green-400">$139,745</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>72 Kuralı</h2>
+                <p>Paranızı ikiye katlamanın ne kadar süreceğini tahmin etmenin hızlı bir yolu:</p>
+                <div class="formula">72 ÷ Faiz Oranı = İkiye Katlanma Yılı</div>
+                <h3>Örnekler:</h3>
+                <ul><li>%6'da: 72 ÷ 6 = 12 yılda ikiye katlanır</li><li>%8'de: 72 ÷ 8 = 9 yılda ikiye katlanır</li><li>%10'da: 72 ÷ 10 = 7,2 yılda ikiye katlanır</li></ul>
+                
+                <h2>Bileşik Sıklığı Önemli</h2>
+                <p>Faiz farklı aralıklarla bileşik olabilir:</p>
+                <ul><li><strong>Yıllık</strong> — yılda bir</li><li><strong>Aylık</strong> — yılda 12 kez</li><li><strong>Günlük</strong> — yılda 365 kez</li><li><strong>Sürekli</strong> — devamlı</li></ul>
+                <p class="text-sm text-slate-500">Daha sık bileşik = biraz daha yüksek getiri. Günlük bileşik tasarruf hesabı, aynı oranda yıllık bileşikten biraz daha fazla kazanır.</p>
+                
+                <h2>Neden Erken Başlamak Önemli</h2>
+                <p>İki kişiyi düşünün:</p>
+                <ul>
+                    <li><strong>Alice</strong> 25-35 yaş arası yılda 5.000$ yatırım yapar (10 yıl, toplam 50.000$), sonra durur.</li>
+                    <li><strong>Bob</strong> 35-65 yaş arası yılda 5.000$ yatırım yapar (30 yıl, toplam 150.000$).</li>
+                </ul>
+                <p class="p-4 bg-green-500/10 rounded-xl border border-green-500/30">65 yaşında (%7 getiri varsayılarak):<br>Alice'in <strong>602.070$</strong>'ı var<br>Bob'un <strong>540.741$</strong>'ı var</p>
+                <p><strong>Alice daha az parayı daha az yıl yatırdı ama daha fazlasıyla bitirdi — çünkü daha erken başladı. Zaman en büyük varlığınızdır.</strong></p>
+                
+                <h2>Bileşik Faizi Maksimize Etmek İçin 5 İpucu</h2>
+                <ol>
+                    <li><strong>Şimdi başlayın</strong> — Başlamanın en iyi zamanı dündü. İkinci en iyisi bugün.</li>
+                    <li><strong>Tutarlı olun</strong> — Düzenli katkılar bileşik faizi hızlandırır.</li>
+                    <li><strong>Temettüleri yeniden yatırın</strong> — Kârları çıkarmayın; bileşik olsunlar.</li>
+                    <li><strong>Ücretleri minimize edin</strong> — Yüksek ücretler getirilerinizi yer ve aleyhinize bileşik olur.</li>
+                    <li><strong>Sabırlı olun</strong> — Bileşik faiz yavaş bir süreçtir. Sihir sonraki yıllarda gerçekleşir.</li>
+                </ol>
+                
+                <h2>Bileşik Faizi Nerede Bulursunuz</h2>
+                <ul><li>Tasarruf hesapları</li><li>Mevduat sertifikaları</li><li>Tahviller</li><li>Borsa yatırımları</li><li>Emeklilik hesapları</li><li>Gayrimenkul değer artışı</li></ul>
+                
+                <h2>⚠️ Karanlık Taraf: Borçta Bileşik Faiz</h2>
+                <p class="p-4 bg-red-500/10 rounded-xl border border-red-500/30">Bileşik faiz borçta aleyhinize çalışır. Kredi kartı faizi bileşik olur, yani faiz üzerine faiz ödersiniz. %20 APR'de 5.000$ bakiye, sadece minimumları ödeyerek, ödemesi 20+ yıl sürebilir ve 8.000$'dan fazla faiz maliyeti olabilir.</p>
+                
+                <div class="mt-8 p-6 bg-indigo-500/10 rounded-xl border border-indigo-500/30">
+                    <p class="text-indigo-400 font-semibold mb-2">🧮 Eylemde Görün</p>
+                    <p class="mb-4">Paranızın nasıl büyüyebileceğini görmek için bileşik faiz hesaplayıcımızla oynayın.</p>
+                    <a href="/tr/" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl transition">Hesaplayıcıyı Aç →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-8 px-4 border-t border-white/10">
+        <div class="max-w-3xl mx-auto text-center text-slate-500 text-sm">
+            <p>© 2026 CompoundCalc.ai</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juros Compostos vs Juros Simples: Qual a Diferença?</title>
+    <meta name="description" content="Aprenda as principais diferenças entre juros compostos e simples. Veja exemplos, fórmulas e quando cada tipo mais te beneficia.">
+    <link rel="canonical" href="https://compoundcalc.ai/articles/compound-vs-simple/pt/">
+    
+    <meta property="og:title" content="Juros Compostos vs Juros Simples">
+    <meta property="og:description" content="Aprenda as principais diferenças entre juros compostos e simples. Veja exemplos, fórmulas e quando cada tipo mais te beneficia.">
+    <meta property="og:type" content="article">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Juros Compostos vs Juros Simples","description":"Aprenda as principais diferenças entre juros compostos e simples. Veja exemplos, fórmulas e quando cada tipo mais te beneficia.","author":{"@type":"Organization","name":"CompoundCalc.ai"},"publisher":{"@type":"Organization","name":"CompoundCalc.ai"},"datePublished":"2026-02-20","dateModified":"2026-02-20"}
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .prose { line-height: 1.8; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #818cf8; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #c4b5fd; }
+        .prose p { margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #f1f5f9; }
+        .formula { background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); padding: 1rem; border-radius: 0.75rem; font-family: monospace; text-align: center; margin: 1rem 0; color: #c4b5fd; }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-540W3EEBWX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-540W3EEBWX');</script>
+</head>
+<body class="text-white">
+    <header class="py-6 px-4">
+        <div class="max-w-3xl mx-auto flex items-center justify-between">
+            <a href="/pt/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-xl">📈</div>
+                <span class="text-xl font-bold">CompoundCalc</span>
+            </a>
+            <a href="/pt/" class="text-indigo-400 hover:text-indigo-300 text-sm">← Calculadora</a>
+        </div>
+    </header>
+
+    <main class="px-4 pb-16">
+        <article class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Juros Compostos vs Juros Simples</h1>
+                <p class="text-slate-400">Entendendo os dois tipos de juros e como afetam seu dinheiro</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:p-10 prose">
+                <p class="text-lg">Quando se trata de fazer seu dinheiro crescer ou entender custos de empréstimos, o tipo de juros faz uma <strong>enorme diferença</strong>. Vamos explicar juros compostos vs simples em termos claros.</p>
+                
+                <h2>O que são Juros Simples?</h2>
+                <p>Juros simples são calculados apenas sobre o <strong>capital original</strong> (seu depósito inicial ou valor do empréstimo). Não muda ao longo do tempo.</p>
+                <div class="formula">Juros Simples = Capital × Taxa × Tempo</div>
+                <h3>Exemplo:</h3>
+                <p>Você investe R$1.000 a 5% de juros simples por 3 anos:<br>Juros = R$1.000 × 0,05 × 3 = <strong>R$150</strong><br>Total após 3 anos: <strong>R$1.150</strong></p>
+                
+                <h2>O que são Juros Compostos?</h2>
+                <p>Juros compostos são calculados sobre o capital <strong>mais quaisquer juros acumulados</strong>. Seus juros rendem juros — isso é o que os torna tão poderosos.</p>
+                <div class="formula">A = P(1 + r/n)^(nt)</div>
+                <p class="text-sm text-slate-500">Onde: A = montante final, P = capital, r = taxa, n = composições por ano, t = anos</p>
+                <h3>Mesmo Exemplo com Juros Compostos:</h3>
+                <p>Você investe R$1.000 a 5% compostos anualmente por 3 anos:<br>Ano 1: R$1.000 × 1,05 = R$1.050<br>Ano 2: R$1.050 × 1,05 = R$1.102,50<br>Ano 3: R$1.102,50 × 1,05 = <strong>R$1.157,63</strong></p>
+                
+                <h2>A Diferença: R$7,63 a Mais</h2>
+                <p>Com juros compostos, você ganhou <strong>R$157,63</strong> vs <strong>R$150</strong> com juros simples. São 5% a mais de ganhos! E essa diferença cresce dramaticamente em períodos mais longos.</p>
+                
+                <h2>Comparação ao Longo do Tempo (R$10.000 a 7%)</h2>
+                <div class="overflow-x-auto my-4">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="py-2 text-left text-slate-400">Anos</th>
+                                <th class="py-2 text-right text-slate-400">Juros Simples</th>
+                                <th class="py-2 text-right text-slate-400">Juros Compostos</th>
+                                <th class="py-2 text-right text-slate-400">Diferença</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5"><td class="py-2">10</td><td class="py-2 text-right">$17,000</td><td class="py-2 text-right">$19,672</td><td class="py-2 text-right text-green-400">+$2,672</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">20</td><td class="py-2 text-right">$24,000</td><td class="py-2 text-right">$38,697</td><td class="py-2 text-right text-green-400">+$14,697</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">30</td><td class="py-2 text-right">$31,000</td><td class="py-2 text-right">$76,123</td><td class="py-2 text-right text-green-400">+$45,123</td></tr>
+                            <tr><td class="py-2">40</td><td class="py-2 text-right">$38,000</td><td class="py-2 text-right">$149,745</td><td class="py-2 text-right text-green-400">+$111,745</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>Quando Cada Tipo é Usado</h2>
+                <h3>Juros simples são comuns em:</h3>
+                <ul><li>Financiamentos de veículos</li><li>Empréstimos pessoais de curto prazo</li><li>Alguns títulos</li><li>Financiamentos com carência</li></ul>
+                <h3>Juros compostos são comuns em:</h3>
+                <ul><li>Contas poupança</li><li>Contas de investimento</li><li>Cartões de crédito (trabalha contra você!)</li><li>Financiamentos imobiliários</li><li>Empréstimos estudantis</li></ul>
+                
+                <h2>Pontos-Chave</h2>
+                <ul>
+                    <li><strong>Para poupar:</strong> Você quer juros compostos — quanto mais frequente a composição, melhor</li>
+                    <li><strong>Para empréstimos:</strong> Juros simples custam menos ao longo do tempo</li>
+                    <li><strong>O tempo importa:</strong> Os benefícios dos juros compostos crescem exponencialmente com o tempo</li>
+                    <li><strong>Comece cedo:</strong> Quanto mais cedo você começar a investir com juros compostos, mais dramáticos os resultados</li>
+                </ul>
+                
+                <div class="mt-8 p-6 bg-indigo-500/10 rounded-xl border border-indigo-500/30">
+                    <p class="text-indigo-400 font-semibold mb-2">📊 Calcule Seu Crescimento</p>
+                    <p class="mb-4">Use nossa calculadora gratuita de juros compostos para ver como seu dinheiro pode crescer.</p>
+                    <a href="/pt/" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl transition">Abrir Calculadora →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-8 px-4 border-t border-white/10">
+        <div class="max-w-3xl mx-auto text-center text-slate-500 text-sm">
+            <p>© 2026 CompoundCalc.ai</p>
+        </div>
+    </footer>
+</body>
+</html>

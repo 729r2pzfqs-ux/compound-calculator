@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複利と単利：その違いとは？</title>
+    <meta name="description" content="複利と単利の主な違いを学びましょう。例、公式、そしてそれぞれがいつ最も有利かを確認できます。">
+    <link rel="canonical" href="https://compoundcalc.ai/articles/compound-vs-simple/ja/">
+    
+    <meta property="og:title" content="複利と単利の違い">
+    <meta property="og:description" content="複利と単利の主な違いを学びましょう。例、公式、そしてそれぞれがいつ最も有利かを確認できます。">
+    <meta property="og:type" content="article">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"複利と単利の違い","description":"複利と単利の主な違いを学びましょう。例、公式、そしてそれぞれがいつ最も有利かを確認できます。","author":{"@type":"Organization","name":"CompoundCalc.ai"},"publisher":{"@type":"Organization","name":"CompoundCalc.ai"},"datePublished":"2026-02-20","dateModified":"2026-02-20"}
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .prose { line-height: 1.8; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #818cf8; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #c4b5fd; }
+        .prose p { margin-bottom: 1rem; color: #cbd5e1; }
+        .prose ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #f1f5f9; }
+        .formula { background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.4); padding: 1rem; border-radius: 0.75rem; font-family: monospace; text-align: center; margin: 1rem 0; color: #c4b5fd; }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-540W3EEBWX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-540W3EEBWX');</script>
+</head>
+<body class="text-white">
+    <header class="py-6 px-4">
+        <div class="max-w-3xl mx-auto flex items-center justify-between">
+            <a href="/ja/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-xl">📈</div>
+                <span class="text-xl font-bold">CompoundCalc</span>
+            </a>
+            <a href="/ja/" class="text-indigo-400 hover:text-indigo-300 text-sm">← 計算機</a>
+        </div>
+    </header>
+
+    <main class="px-4 pb-16">
+        <article class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">複利と単利の違い</h1>
+                <p class="text-slate-400">2種類の利息とお金への影響を理解する</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:p-10 prose">
+                <p class="text-lg">お金を増やすにも、ローンのコストを理解するにも、利息の種類は<strong>大きな違い</strong>を生みます。複利と単利をわかりやすく解説します。</p>
+                
+                <h2>単利とは？</h2>
+                <p>単利は<strong>元本</strong>（最初の預金またはローン金額）のみに基づいて計算されます。時間が経っても変わりません。</p>
+                <div class="formula">単利 = 元本 × 利率 × 期間</div>
+                <h3>例：</h3>
+                <p>年利5%の単利で10万円を3年間投資：<br>利息 = 10万円 × 0.05 × 3 = <strong>1.5万円</strong><br>3年後の合計：<strong>11.5万円</strong></p>
+                
+                <h2>複利とは？</h2>
+                <p>複利は元本<strong>と蓄積された利息</strong>に基づいて計算されます。利息が利息を生む — これが複利の力です。</p>
+                <div class="formula">A = P(1 + r/n)^(nt)</div>
+                <p class="text-sm text-slate-500">A = 最終金額、P = 元本、r = 利率、n = 年間複利回数、t = 年数</p>
+                <h3>同じ例を複利で：</h3>
+                <p>年利5%の複利で10万円を3年間投資：<br>1年目：10万円 × 1.05 = 10.5万円<br>2年目：10.5万円 × 1.05 = 11.025万円<br>3年目：11.025万円 × 1.05 = <strong>11.576万円</strong></p>
+                
+                <h2>違い：763円の差</h2>
+                <p>複利では<strong>15,763円</strong>の利息、単利では<strong>15,000円</strong>。5%多く稼げます！この差は長期間になると劇的に大きくなります。</p>
+                
+                <h2>経時比較（100万円、年利7%）</h2>
+                <div class="overflow-x-auto my-4">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="py-2 text-left text-slate-400">年数</th>
+                                <th class="py-2 text-right text-slate-400">単利</th>
+                                <th class="py-2 text-right text-slate-400">複利</th>
+                                <th class="py-2 text-right text-slate-400">差額</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5"><td class="py-2">10</td><td class="py-2 text-right">$17,000</td><td class="py-2 text-right">$19,672</td><td class="py-2 text-right text-green-400">+$2,672</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">20</td><td class="py-2 text-right">$24,000</td><td class="py-2 text-right">$38,697</td><td class="py-2 text-right text-green-400">+$14,697</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-2">30</td><td class="py-2 text-right">$31,000</td><td class="py-2 text-right">$76,123</td><td class="py-2 text-right text-green-400">+$45,123</td></tr>
+                            <tr><td class="py-2">40</td><td class="py-2 text-right">$38,000</td><td class="py-2 text-right">$149,745</td><td class="py-2 text-right text-green-400">+$111,745</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>それぞれの使用場面</h2>
+                <h3>単利が一般的なもの：</h3>
+                <ul><li>自動車ローン</li><li>短期個人ローン</li><li>一部の債券</li><li>利息のみの住宅ローン</li></ul>
+                <h3>複利が一般的なもの：</h3>
+                <ul><li>普通預金</li><li>投資口座</li><li>クレジットカード（不利に働く！）</li><li>住宅ローン</li><li>学生ローン</li></ul>
+                
+                <h2>重要ポイント</h2>
+                <ul>
+                    <li><strong>貯蓄の場合：</strong>複利が欲しい — 複利の頻度が高いほど良い</li>
+                    <li><strong>ローンの場合：</strong>単利の方が長期的にコストが低い</li>
+                    <li><strong>時間が重要：</strong>複利のメリットは時間とともに指数関数的に成長</li>
+                    <li><strong>早く始める：</strong>複利投資を早く始めるほど、効果は劇的</li>
+                </ul>
+                
+                <div class="mt-8 p-6 bg-indigo-500/10 rounded-xl border border-indigo-500/30">
+                    <p class="text-indigo-400 font-semibold mb-2">📊 成長を計算</p>
+                    <p class="mb-4">無料の複利計算機で、お金がどのように成長するか確認しましょう。</p>
+                    <a href="/ja/" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl transition">計算機を開く →</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-8 px-4 border-t border-white/10">
+        <div class="max-w-3xl mx-auto text-center text-slate-500 text-sm">
+            <p>© 2026 CompoundCalc.ai</p>
+        </div>
+    </footer>
+</body>
+</html>
