@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Compound Interest Calculator">
     <meta name="twitter:description" content="See how your money grows with compound interest.">
     
-    <!-- Schema.org -->
+    <!-- Schema.org WebApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -42,6 +42,96 @@
         "description": "Free compound interest calculator with visual charts",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
+    }
+    </script>
+    
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is compound interest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compound interest is interest calculated on both your initial principal and the accumulated interest from previous periods. Unlike simple interest, which only earns on the original amount, compound interest grows exponentially over time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should interest compound?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "More frequent compounding leads to higher returns. Daily compounding earns slightly more than monthly, but the difference is minimal for most investments. The real power comes from time, not compounding frequency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's a realistic interest rate to expect?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings accounts: 0.5-5%. Stock market average (S&P 500): 7-10% annually. High-yield bonds: 5-8%. Real estate: 8-12%. Always consider inflation (2-3%) when planning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why should I start investing early?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Due to compound interest, starting 10 years earlier can double your final amount. A 25-year-old investing $500/month at 7% will have $1.2M by 65. Starting at 35 yields only $567K—half as much from the same contributions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the Rule of 72?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Rule of 72 is a quick way to estimate how long it takes to double your money. Divide 72 by your interest rate: at 7% interest, your money doubles in about 10.3 years (72 ÷ 7 = 10.3)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between compound and simple interest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Simple interest only earns on your original principal. Compound interest earns on principal plus accumulated interest. Over 20 years at 7%, $10,000 grows to $24,000 with simple interest but $38,700 with compound interest."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do monthly contributions affect compound growth?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Regular contributions dramatically accelerate wealth building. Adding just $200/month to a $10,000 investment at 7% over 20 years turns $58,000 in deposits into over $150,000—nearly triple your money."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does compound interest work on debt too?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, and it works against you. Credit card debt at 20% APR compounds, making balances grow rapidly. A $5,000 balance with minimum payments can take 20+ years to pay off and cost $10,000+ in interest."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the best account for compound interest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For safety: high-yield savings accounts (4-5% APY). For growth: index funds or ETFs tracking the S&P 500 (historically 7-10%). Tax-advantaged accounts like 401(k) or IRA maximize compound growth by deferring taxes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is this compound interest calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator provides accurate mathematical projections based on consistent returns. Real investments fluctuate—stocks can gain 20% one year and lose 10% the next. Use these results for planning, not guarantees."
+                }
+            }
+        ]
     }
     </script>
     
@@ -282,6 +372,16 @@
                         </div>
                     </div>
 
+                    <!-- Rule of 72 -->
+                    <div class="glass rounded-2xl p-5">
+                        <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                            <span class="text-2xl">⚡</span> Rule of 72
+                        </h3>
+                        <p class="text-white/60 text-sm mb-2">At <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> interest, your money doubles every:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 years</p>
+                        <p class="text-white/40 text-xs mt-2">Formula: 72 ÷ interest rate = years to double</p>
+                    </div>
+
                     <!-- Comparison -->
                     <div class="glass rounded-2xl p-5">
                         <h3 class="text-lg font-semibold mb-3">Compound vs Simple Interest</h3>
@@ -320,16 +420,44 @@
                 <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
                 <div class="space-y-4">
                     <div>
+                        <h3 class="font-semibold text-emerald-400">What is compound interest?</h3>
+                        <p class="text-white/70 mt-1">Compound interest is interest calculated on both your initial principal and the accumulated interest from previous periods. Unlike simple interest, which only earns on the original amount, compound interest grows exponentially over time.</p>
+                    </div>
+                    <div>
                         <h3 class="font-semibold text-emerald-400">How often should interest compound?</h3>
-                        <p class="text-white/70 mt-1">More frequent compounding leads to higher returns. Daily compounding earns slightly more than monthly, but the difference is minimal for most investments.</p>
+                        <p class="text-white/70 mt-1">More frequent compounding leads to higher returns. Daily compounding earns slightly more than monthly, but the difference is minimal for most investments. The real power comes from time, not compounding frequency.</p>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-emerald-400">What's a realistic interest rate?</h3>
-                        <p class="text-white/70 mt-1">Savings accounts: 0.5-5%. Stock market average (S&P 500): 7-10% annually. High-yield bonds: 5-8%. Always consider inflation (2-3%).</p>
+                        <h3 class="font-semibold text-emerald-400">What's a realistic interest rate to expect?</h3>
+                        <p class="text-white/70 mt-1">Savings accounts: 0.5-5%. Stock market average (S&P 500): 7-10% annually. High-yield bonds: 5-8%. Real estate: 8-12%. Always consider inflation (2-3%) when planning.</p>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-emerald-400">Why start investing early?</h3>
-                        <p class="text-white/70 mt-1">Due to compound interest, starting 10 years earlier can double your final amount. Time is your biggest asset in wealth building.</p>
+                        <h3 class="font-semibold text-emerald-400">Why should I start investing early?</h3>
+                        <p class="text-white/70 mt-1">Due to compound interest, starting 10 years earlier can double your final amount. A 25-year-old investing $500/month at 7% will have $1.2M by 65. Starting at 35 yields only $567K—half as much from the same contributions.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-emerald-400">What is the Rule of 72?</h3>
+                        <p class="text-white/70 mt-1">The Rule of 72 is a quick way to estimate how long it takes to double your money. Divide 72 by your interest rate: at 7% interest, your money doubles in about 10.3 years (72 ÷ 7 = 10.3).</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-emerald-400">What's the difference between compound and simple interest?</h3>
+                        <p class="text-white/70 mt-1">Simple interest only earns on your original principal. Compound interest earns on principal plus accumulated interest. Over 20 years at 7%, $10,000 grows to $24,000 with simple interest but $38,700 with compound interest.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-emerald-400">How do monthly contributions affect compound growth?</h3>
+                        <p class="text-white/70 mt-1">Regular contributions dramatically accelerate wealth building. Adding just $200/month to a $10,000 investment at 7% over 20 years turns $58,000 in deposits into over $150,000—nearly triple your money.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-emerald-400">Does compound interest work on debt too?</h3>
+                        <p class="text-white/70 mt-1">Yes, and it works against you. Credit card debt at 20% APR compounds, making balances grow rapidly. A $5,000 balance with minimum payments can take 20+ years to pay off and cost $10,000+ in interest.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-emerald-400">What's the best account for compound interest?</h3>
+                        <p class="text-white/70 mt-1">For safety: high-yield savings accounts (4-5% APY). For growth: index funds or ETFs tracking the S&P 500 (historically 7-10%). Tax-advantaged accounts like 401(k) or IRA maximize compound growth by deferring taxes.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-emerald-400">How accurate is this compound interest calculator?</h3>
+                        <p class="text-white/70 mt-1">This calculator provides accurate mathematical projections based on consistent returns. Real investments fluctuate—stocks can gain 20% one year and lose 10% the next. Use these results for planning, not guarantees.</p>
                     </div>
                 </div>
             </div>
@@ -393,6 +521,12 @@
             const extraEarned = totalFutureValue - simpleInterest;
             document.getElementById('extraEarned').textContent = 
                 `You earn ${formatCurrency(extraEarned)} more with compound interest!`;
+
+            // Rule of 72
+            const ratePercent = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePercent + '%';
+            const doubleYears = ratePercent > 0 ? (72 / ratePercent).toFixed(1) : '∞';
+            document.getElementById('doubleYears').textContent = doubleYears + ' years';
 
             // Update chart
             updateChart(P, PMT, r, t, n);
