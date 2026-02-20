@@ -20,6 +20,14 @@
     <meta property="og:title" content="حاسبة الفائدة المركبة | حاسبة الاستثمار المجانية">
     <meta property="og:url" content="https://compoundcalc.ai/ar/">
     <meta property="og:locale" content="ar_SA">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "ما هي الفائدة المركبة؟", "acceptedAnswer": {"@type": "Answer", "text": "الفائدة المركبة هي الفائدة المحسوبة على رأس المال الأصلي وأيضاً على الفائدة المتراكمة من الفترات السابقة. على عكس الفائدة البسيطة، ينمو مالك بشكل أسي."}},
+        {"@type": "Question", "name": "كم مرة يجب أن تتراكم الفائدة؟", "acceptedAnswer": {"@type": "Answer", "text": "التراكم الأكثر تكراراً يؤدي إلى عوائد أعلى. التراكم اليومي يكسب أكثر قليلاً من الشهري، لكن الفرق ضئيل لمعظم الاستثمارات."}},
+        {"@type": "Question", "name": "ما هي قاعدة 72؟", "acceptedAnswer": {"@type": "Answer", "text": "قاعدة 72 هي طريقة سريعة لتقدير الوقت اللازم لمضاعفة أموالك. اقسم 72 على معدل الفائدة: عند 7%، تتضاعف أموالك في حوالي 10.3 سنة."}},
+        {"@type": "Question", "name": "لماذا يجب أن أبدأ الاستثمار مبكراً؟", "acceptedAnswer": {"@type": "Answer", "text": "بسبب الفائدة المركبة، البدء قبل 10 سنوات يمكن أن يضاعف مبلغك النهائي. الوقت هو أكبر أصولك في بناء الثروة."}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>الفائدة المكتسبة</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">النمو عبر الزمن</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> قاعدة 72</h3>
+                        <p class="text-white/60 text-sm mb-2">عند <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> فائدة، يتضاعف مالك في:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 سنة</p>
+                        <p class="text-white/40 text-xs mt-2">الصيغة: 72 ÷ معدل الفائدة = سنوات للمضاعفة</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">مركبة vs فائدة بسيطة</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">فائدة بسيطة</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">فائدة مركبة</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">ما هي الفائدة المركبة؟</h2>
                 <p class="text-white/70 mb-4">الفائدة المركبة هي الفائدة المحسوبة على رأس المال الأصلي وأيضاً على الفائدة المتراكمة من الفترات السابقة.</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">الأسئلة الشائعة</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">ما هي الفائدة المركبة؟</h3><p class="text-white/70 mt-1">الفائدة المركبة تُحسب على رأس المال الأصلي والفائدة المتراكمة. على عكس الفائدة البسيطة، ينمو مالك بشكل أسي مع الوقت.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">كم مرة يجب أن تتراكم الفائدة؟</h3><p class="text-white/70 mt-1">التراكم الأكثر تكراراً يؤدي إلى عوائد أعلى. التراكم اليومي يكسب أكثر قليلاً من الشهري، لكن الفرق ضئيل. القوة الحقيقية في الوقت.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">ما هو العائد الواقعي؟</h3><p class="text-white/70 mt-1">حسابات التوفير: 0.5-5%. سوق الأسهم (S&P 500): 7-10% سنوياً. السندات: 5-8%. العقارات: 8-12%. دائماً خذ التضخم (2-3%) في الاعتبار.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">لماذا يجب أن أبدأ الاستثمار مبكراً؟</h3><p class="text-white/70 mt-1">بسبب الفائدة المركبة، البدء قبل 10 سنوات يمكن أن يضاعف مبلغك النهائي. شخص عمره 25 يستثمر $500/شهر بـ7% سيملك $1.2M عند 65. البدء عند 35، فقط $567K.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">ما هي قاعدة 72؟</h3><p class="text-white/70 mt-1">قاعدة 72 طريقة سريعة لتقدير وقت مضاعفة المال. اقسم 72 على المعدل: عند 7%، يتضاعف المال في حوالي 10.3 سنة (72 ÷ 7 = 10.3).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">ما الفرق بين الفائدة المركبة والبسيطة؟</h3><p class="text-white/70 mt-1">الفائدة البسيطة تُطبق فقط على رأس المال الأصلي. المركبة تُطبق على رأس المال والفائدة المتراكمة. في 20 سنة بـ7%، $10,000 تصبح $24,000 بالبسيطة، لكن $38,700 بالمركبة.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">كيف تؤثر المساهمات الشهرية على النمو؟</h3><p class="text-white/70 mt-1">المساهمات المنتظمة تسرع تراكم الثروة بشكل كبير. فقط $200/شهر مضافة إلى استثمار $10,000 بـ7% لـ20 سنة تحول $58,000 ودائع إلى أكثر من $150,000.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">هل تعمل الفائدة المركبة على الديون أيضاً؟</h3><p class="text-white/70 mt-1">نعم، وتعمل ضدك. ديون بطاقات الائتمان بـ20% تنمو بسرعة بالتراكم. رصيد $5,000 بالحد الأدنى قد يستغرق 20+ سنة ويكلف $10,000+ فوائد.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">ما أفضل حساب للفائدة المركبة؟</h3><p class="text-white/70 mt-1">للأمان: حسابات توفير عالية العائد (4-5%). للنمو: صناديق المؤشرات أو ETF S&P 500 (تاريخياً 7-10%). الحسابات ذات المزايا الضريبية تعظم النمو المركب.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">ما مدى دقة هذه الحاسبة؟</h3><p class="text-white/70 mt-1">هذه الحاسبة تقدم توقعات رياضية دقيقة بناءً على عوائد ثابتة. الاستثمارات الحقيقية تتقلب. استخدم هذه النتائج للتخطيط، ليس كضمانات.</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = 'تكسب {amount} أكثر مع الفائدة المركبة!'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' سنة';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {

@@ -20,6 +20,14 @@
     <meta property="og:title" content="複利計算機 | 無料投資成長計算機">
     <meta property="og:url" content="https://compoundcalc.ai/ja/">
     <meta property="og:locale" content="ja_JP">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "複利とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "複利とは、元本と過去の期間に蓄積された利息の両方に対して計算される利息です。単利とは異なり、お金は指数関数的に成長します。"}},
+        {"@type": "Question", "name": "利息はどのくらいの頻度で複利になるべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "より頻繁な複利はより高いリターンをもたらします。日次複利は月次よりわずかに多くなりますが、ほとんどの投資では差は最小限です。"}},
+        {"@type": "Question", "name": "72の法則とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "72の法則は、お金が倍になるまでの時間を素早く見積もる方法です。72を金利で割ります：7%なら約10.3年で倍になります。"}},
+        {"@type": "Question", "name": "なぜ早く投資を始めるべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "複利のおかげで、10年早く始めると最終的な金額が倍になる可能性があります。時間は資産形成における最大の味方です。"}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>獲得利息</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">時間経過による成長</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> 72の法則</h3>
+                        <p class="text-white/60 text-sm mb-2"><span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> の金利で、お金が倍になるまで:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 年</p>
+                        <p class="text-white/40 text-xs mt-2">計算式: 72 ÷ 金利 = 倍になる年数</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">複利 vs 単利</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">単利</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">複利</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">複利とは？</h2>
                 <p class="text-white/70 mb-4">複利とは、元本と過去の期間に蓄積された利息の両方に対して計算される利息です。</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">よくある質問</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">複利とは何ですか？</h3><p class="text-white/70 mt-1">複利は、元本と蓄積された利息の両方に対して計算される利息です。単利とは異なり、お金は時間とともに指数関数的に成長します。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">利息はどのくらいの頻度で複利になるべきですか？</h3><p class="text-white/70 mt-1">より頻繁な複利はより高いリターンをもたらします。日次複利は月次よりわずかに多くなりますが、差は最小限です。本当の力は時間にあります。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">現実的なリターンはどのくらいですか？</h3><p class="text-white/70 mt-1">普通預金：0.5-5%。株式市場（S&P 500）：年7-10%。債券：5-8%。不動産：8-12%。常にインフレ（2-3%）を考慮してください。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">なぜ早く投資を始めるべきですか？</h3><p class="text-white/70 mt-1">複利のおかげで、10年早く始めると最終的な金額が倍になる可能性があります。25歳で月5万円を7%で投資すると65歳で1.2億円。35歳からだと5670万円のみ。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">72の法則とは何ですか？</h3><p class="text-white/70 mt-1">72の法則は、お金が倍になるまでの時間を素早く見積もる方法です。72を金利で割ります：7%なら約10.3年で倍になります（72 ÷ 7 = 10.3）。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">複利と単利の違いは何ですか？</h3><p class="text-white/70 mt-1">単利は元本にのみ適用されます。複利は元本と蓄積された利息に適用されます。20年間7%で、100万円は単利で240万円、複利で387万円に成長します。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">毎月の積立はどのように成長に影響しますか？</h3><p class="text-white/70 mt-1">定期的な積立は資産形成を劇的に加速します。100万円の投資に月2万円を7%で20年間追加すると、580万円の預金が150万円以上になります。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">複利は借金にも働きますか？</h3><p class="text-white/70 mt-1">はい、そしてそれはあなたに不利に働きます。20%のクレジットカード債務は複利で急速に増加します。50万円の残高は最低支払いで20年以上かかり、100万円以上の利息がかかる可能性があります。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">複利に最適な口座は何ですか？</h3><p class="text-white/70 mt-1">安全性重視：高金利普通預金（4-5%）。成長重視：S&P 500のインデックスファンドやETF（歴史的に7-10%）。税制優遇口座は複利成長を最大化します。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">この計算機はどのくらい正確ですか？</h3><p class="text-white/70 mt-1">この計算機は一定のリターンに基づいた正確な数学的予測を提供します。実際の投資は変動します。これらの結果は計画用であり、保証ではありません。</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = '複利で {amount} 多く稼げます！'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' 年';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {
