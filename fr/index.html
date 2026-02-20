@@ -20,6 +20,14 @@
     <meta property="og:title" content="Calculateur d'Intérêts Composés | Calculateur d'Investissement Gratuit">
     <meta property="og:url" content="https://compoundcalc.ai/fr/">
     <meta property="og:locale" content="fr_FR">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "Qu'est-ce que l'intérêt composé?", "acceptedAnswer": {"@type": "Answer", "text": "L'intérêt composé est l'intérêt calculé sur votre capital initial et également sur les intérêts accumulés des périodes précédentes. Contrairement à l'intérêt simple, votre argent croît exponentiellement."}},
+        {"@type": "Question", "name": "À quelle fréquence les intérêts doivent-ils être composés?", "acceptedAnswer": {"@type": "Answer", "text": "Une composition plus fréquente génère des rendements plus élevés. La composition quotidienne rapporte légèrement plus que la mensuelle, mais la différence est minime pour la plupart des investissements."}},
+        {"@type": "Question", "name": "Qu'est-ce que la Règle de 72?", "acceptedAnswer": {"@type": "Answer", "text": "La Règle de 72 est un moyen rapide d'estimer combien de temps il faut pour doubler votre argent. Divisez 72 par votre taux d'intérêt: à 7%, votre argent double en environ 10,3 ans."}},
+        {"@type": "Question", "name": "Pourquoi devrais-je commencer à investir tôt?", "acceptedAnswer": {"@type": "Answer", "text": "Grâce aux intérêts composés, commencer 10 ans plus tôt peut doubler votre montant final. Le temps est votre plus grand atout dans la construction de patrimoine."}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>Intérêts Gagnés</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">Croissance au Fil du Temps</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> Règle de 72</h3>
+                        <p class="text-white/60 text-sm mb-2">À <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> d'intérêt, votre argent double en:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 ans</p>
+                        <p class="text-white/40 text-xs mt-2">Formule: 72 ÷ taux d'intérêt = années pour doubler</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Composé vs Intérêt Simple</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Intérêt Simple</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Intérêt Composé</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">Qu'est-ce que l'Intérêt Composé?</h2>
                 <p class="text-white/70 mb-4">L'intérêt composé est l'intérêt calculé sur le capital initial et également sur les intérêts accumulés des périodes précédentes.</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Questions Fréquentes</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">Qu'est-ce que l'intérêt composé?</h3><p class="text-white/70 mt-1">L'intérêt composé est l'intérêt calculé sur votre capital initial et également sur les intérêts accumulés. Contrairement à l'intérêt simple, votre argent croît exponentiellement avec le temps.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">À quelle fréquence les intérêts doivent-ils être composés?</h3><p class="text-white/70 mt-1">Une composition plus fréquente génère des rendements plus élevés. La composition quotidienne rapporte légèrement plus que mensuelle, mais la différence est minime. Le vrai pouvoir vient du temps.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Quel est un rendement réaliste?</h3><p class="text-white/70 mt-1">Comptes d'épargne: 0,5-5%. Marché boursier (S&P 500): 7-10% annuellement. Obligations: 5-8%. Immobilier: 8-12%. Considérez toujours l'inflation (2-3%).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Pourquoi devrais-je commencer à investir tôt?</h3><p class="text-white/70 mt-1">Grâce aux intérêts composés, commencer 10 ans plus tôt peut doubler votre montant final. Une personne de 25 ans investissant 500€/mois à 7% aura 1,2M€ à 65 ans. En commençant à 35 ans, seulement 567K€.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Qu'est-ce que la Règle de 72?</h3><p class="text-white/70 mt-1">La Règle de 72 est un moyen rapide d'estimer combien de temps il faut pour doubler votre argent. Divisez 72 par votre taux: à 7%, votre argent double en environ 10,3 ans (72 ÷ 7 = 10,3).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Quelle est la différence entre intérêt composé et simple?</h3><p class="text-white/70 mt-1">L'intérêt simple ne s'applique qu'à votre capital original. L'intérêt composé s'applique au capital plus les intérêts accumulés. Sur 20 ans à 7%, 10 000€ deviennent 24 000€ en simple, mais 38 700€ en composé.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Comment les contributions mensuelles affectent-elles la croissance?</h3><p class="text-white/70 mt-1">Les contributions régulières accélèrent considérablement l'accumulation de patrimoine. Seulement 200€/mois ajoutés à un investissement de 10 000€ à 7% pendant 20 ans transforme 58 000€ de dépôts en plus de 150 000€.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">L'intérêt composé fonctionne-t-il aussi sur les dettes?</h3><p class="text-white/70 mt-1">Oui, et il travaille contre vous. Les dettes de carte de crédit à 20% croissent rapidement par composition. Un solde de 5 000€ avec paiements minimums peut prendre plus de 20 ans et coûter 10 000€+ en intérêts.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Quel est le meilleur compte pour les intérêts composés?</h3><p class="text-white/70 mt-1">Pour la sécurité: comptes d'épargne à haut rendement (4-5%). Pour la croissance: fonds indiciels ou ETF S&P 500 (historiquement 7-10%). Les comptes fiscalement avantageux maximisent la croissance composée.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Quelle est la précision de ce calculateur?</h3><p class="text-white/70 mt-1">Ce calculateur fournit des projections mathématiques précises basées sur des rendements constants. Les investissements réels fluctuent. Utilisez ces résultats pour planifier, pas comme garanties.</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = 'Vous gagnez {amount} de plus avec les intérêts composés!'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' ans';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {

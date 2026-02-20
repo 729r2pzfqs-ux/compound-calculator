@@ -20,6 +20,20 @@
     <meta property="og:title" content="Zinseszinsrechner | Kostenloser Investitionsrechner">
     <meta property="og:url" content="https://compoundcalc.ai/de/">
     <meta property="og:locale" content="de_DE">
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Was ist Zinseszins?", "acceptedAnswer": {"@type": "Answer", "text": "Zinseszins ist der Zins, der sowohl auf Ihr ursprüngliches Kapital als auch auf die aufgelaufenen Zinsen aus früheren Perioden berechnet wird. Im Gegensatz zu einfachen Zinsen wächst Ihr Geld exponentiell."}},
+            {"@type": "Question", "name": "Wie oft sollten Zinsen anfallen?", "acceptedAnswer": {"@type": "Answer", "text": "Häufigere Zinseszinsen führen zu höheren Erträgen. Tägliche Zinsen bringen etwas mehr als monatliche, aber der Unterschied ist bei den meisten Anlagen minimal."}},
+            {"@type": "Question", "name": "Was ist eine realistische Rendite?", "acceptedAnswer": {"@type": "Answer", "text": "Sparkonten: 0,5-5%. Aktienmarkt (S&P 500): 7-10% jährlich. Anleihen: 5-8%. Immobilien: 8-12%. Berücksichtigen Sie immer die Inflation (2-3%)."}},
+            {"@type": "Question", "name": "Was ist die 72er-Regel?", "acceptedAnswer": {"@type": "Answer", "text": "Die 72er-Regel ist eine schnelle Methode um abzuschätzen, wie lange es dauert, Ihr Geld zu verdoppeln. Teilen Sie 72 durch Ihren Zinssatz: Bei 7% verdoppelt sich Ihr Geld in etwa 10,3 Jahren."}},
+            {"@type": "Question", "name": "Warum sollte ich früh anfangen zu investieren?", "acceptedAnswer": {"@type": "Answer", "text": "Durch Zinseszinsen kann ein 10 Jahre früherer Start Ihr Endergebnis verdoppeln. Zeit ist Ihr größter Vorteil beim Vermögensaufbau."}}
+        ]
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +113,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>Verdiente Zinsen</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">Wachstum im Zeitverlauf</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> 72er-Regel</h3>
+                        <p class="text-white/60 text-sm mb-2">Bei <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> Zinsen verdoppelt sich Ihr Geld in:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 Jahren</p>
+                        <p class="text-white/40 text-xs mt-2">Formel: 72 ÷ Zinssatz = Jahre bis zur Verdopplung</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Zinseszins vs Einfacher Zins</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Einfacher Zins</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Zinseszins</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +127,21 @@
                 <h2 class="text-2xl font-bold mb-4">Was ist Zinseszins?</h2>
                 <p class="text-white/70 mb-4">Zinseszins ist der Zins, der auf das Anfangskapital und auch auf die angesammelten Zinsen aus früheren Perioden berechnet wird.</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Häufig gestellte Fragen</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">Was ist Zinseszins?</h3><p class="text-white/70 mt-1">Zinseszins ist der Zins, der sowohl auf Ihr ursprüngliches Kapital als auch auf die aufgelaufenen Zinsen berechnet wird. Im Gegensatz zu einfachen Zinsen wächst Ihr Geld exponentiell über die Zeit.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Wie oft sollten Zinsen anfallen?</h3><p class="text-white/70 mt-1">Häufigere Zinseszinsen führen zu höheren Erträgen. Tägliche Zinsen bringen etwas mehr als monatliche, aber der Unterschied ist bei den meisten Anlagen minimal. Die wahre Kraft liegt in der Zeit.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Was ist eine realistische Rendite?</h3><p class="text-white/70 mt-1">Sparkonten: 0,5-5%. Aktienmarkt (S&P 500): 7-10% jährlich. Hochzinsanleihen: 5-8%. Immobilien: 8-12%. Berücksichtigen Sie immer die Inflation (2-3%).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Warum sollte ich früh anfangen zu investieren?</h3><p class="text-white/70 mt-1">Durch Zinseszinsen kann ein 10 Jahre früherer Start Ihr Endergebnis verdoppeln. Ein 25-Jähriger, der 500€/Monat bei 7% investiert, hat mit 65 Jahren 1,2 Mio. €. Beginnt man mit 35, sind es nur 567.000€.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Was ist die 72er-Regel?</h3><p class="text-white/70 mt-1">Die 72er-Regel ist eine schnelle Methode um abzuschätzen, wie lange es dauert, Ihr Geld zu verdoppeln. Teilen Sie 72 durch Ihren Zinssatz: Bei 7% verdoppelt sich Ihr Geld in etwa 10,3 Jahren (72 ÷ 7 = 10,3).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Was ist der Unterschied zwischen Zinseszins und einfachem Zins?</h3><p class="text-white/70 mt-1">Einfacher Zins wird nur auf Ihr ursprüngliches Kapital berechnet. Zinseszins wird auf Kapital plus aufgelaufene Zinsen berechnet. Über 20 Jahre bei 7% wachsen 10.000€ auf 24.000€ mit einfachem Zins, aber auf 38.700€ mit Zinseszins.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Wie wirken sich monatliche Beiträge auf das Wachstum aus?</h3><p class="text-white/70 mt-1">Regelmäßige Beiträge beschleunigen den Vermögensaufbau dramatisch. Nur 200€/Monat zu einer 10.000€-Anlage bei 7% über 20 Jahre verwandelt 58.000€ Einzahlungen in über 150.000€.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Wirkt Zinseszins auch bei Schulden?</h3><p class="text-white/70 mt-1">Ja, und er arbeitet gegen Sie. Kreditkartenschulden bei 20% Zinsen wachsen durch Zinseszins schnell. Ein Saldo von 5.000€ mit Mindestzahlungen kann über 20 Jahre dauern und über 10.000€ an Zinsen kosten.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Welches Konto ist am besten für Zinseszins?</h3><p class="text-white/70 mt-1">Für Sicherheit: Hochzins-Sparkonten (4-5%). Für Wachstum: Indexfonds oder ETFs auf den S&P 500 (historisch 7-10%). Steuerbegünstigte Konten maximieren das Zinseszins-Wachstum durch aufgeschobene Steuern.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Wie genau ist dieser Zinseszinsrechner?</h3><p class="text-white/70 mt-1">Dieser Rechner liefert genaue mathematische Projektionen basierend auf konstanten Erträgen. Echte Anlagen schwanken - Aktien können in einem Jahr 20% gewinnen und im nächsten 10% verlieren. Nutzen Sie diese Ergebnisse zur Planung, nicht als Garantie.</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +171,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = 'Sie verdienen {amount} mehr mit Zinseszins!'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' Jahren';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {

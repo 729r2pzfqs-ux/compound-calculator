@@ -20,6 +20,14 @@
     <meta property="og:title" content="复利计算器 | 免费投资增长计算器">
     <meta property="og:url" content="https://compoundcalc.ai/zh/">
     <meta property="og:locale" content="zh_CN">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "什么是复利？", "acceptedAnswer": {"@type": "Answer", "text": "复利是根据您的初始本金和之前期间累积的利息计算的利息。与单利不同，复利使您的资金呈指数增长。"}},
+        {"@type": "Question", "name": "利息应该多久复利一次？", "acceptedAnswer": {"@type": "Answer", "text": "更频繁的复利会带来更高的回报。每日复利比每月复利稍高，但对于大多数投资来说差异很小。"}},
+        {"@type": "Question", "name": "什么是72法则？", "acceptedAnswer": {"@type": "Answer", "text": "72法则是估算资金翻倍所需时间的快速方法。用72除以利率：7%的利率下，资金大约10.3年翻倍。"}},
+        {"@type": "Question", "name": "为什么要尽早开始投资？", "acceptedAnswer": {"@type": "Answer", "text": "由于复利效应，提前10年开始可以使最终金额翻倍。时间是财富积累中最重要的因素。"}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>赚取的利息</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">随时间增长</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> 72法则</h3>
+                        <p class="text-white/60 text-sm mb-2">在 <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> 利率下，您的资金翻倍需要:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 年</p>
+                        <p class="text-white/40 text-xs mt-2">公式: 72 ÷ 利率 = 翻倍年数</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">复利 vs 单利</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">单利</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">复利</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">什么是复利？</h2>
                 <p class="text-white/70 mb-4">复利是基于本金和之前期间累积利息计算的利息。它通常被称为"利滚利"，使您的资金增长比单利更快。</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">常见问题</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">什么是复利？</h3><p class="text-white/70 mt-1">复利是根据您的初始本金和累积的利息计算的利息。与单利不同，复利使您的资金随时间呈指数增长。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">利息应该多久复利一次？</h3><p class="text-white/70 mt-1">更频繁的复利会带来更高的回报。每日复利比每月复利稍高，但对于大多数投资来说差异很小。真正的力量来自时间。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">什么是现实的回报率？</h3><p class="text-white/70 mt-1">储蓄账户：0.5-5%。股市平均（S&P 500）：每年7-10%。债券：5-8%。房地产：8-12%。始终考虑通货膨胀（2-3%）。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">为什么要尽早开始投资？</h3><p class="text-white/70 mt-1">由于复利效应，提前10年开始可以使最终金额翻倍。25岁开始每月投资500美元，7%收益率，65岁时将有120万美元。35岁开始只有56.7万美元。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">什么是72法则？</h3><p class="text-white/70 mt-1">72法则是估算资金翻倍所需时间的快速方法。用72除以利率：7%的利率下，资金大约10.3年翻倍（72 ÷ 7 = 10.3）。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">复利和单利有什么区别？</h3><p class="text-white/70 mt-1">单利只根据原始本金计算。复利根据本金加累积利息计算。20年7%收益，1万美元单利增长到2.4万，复利增长到3.87万。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">每月投入如何影响增长？</h3><p class="text-white/70 mt-1">定期投入大大加速财富积累。在1万美元投资基础上每月增加200美元，7%收益20年，5.8万美元本金变成超过15万美元。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">复利对债务也有效吗？</h3><p class="text-white/70 mt-1">是的，而且对您不利。20%利率的信用卡债务通过复利快速增长。5000美元余额只还最低还款可能需要20多年，利息超过1万美元。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">什么账户最适合复利？</h3><p class="text-white/70 mt-1">追求安全：高收益储蓄账户（4-5%）。追求增长：跟踪S&P 500的指数基金或ETF（历史上7-10%）。税收优惠账户通过延税最大化复利增长。</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">这个计算器准确吗？</h3><p class="text-white/70 mt-1">这个计算器基于恒定收益提供准确的数学预测。实际投资会波动——股票一年可能涨20%，下一年跌10%。用这些结果做计划，不是保证。</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = '使用复利您可以多赚 {amount}！'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' 年';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {
