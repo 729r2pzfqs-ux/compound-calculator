@@ -20,6 +20,14 @@
     <meta property="og:title" content="Calculadora de Juros Compostos | Calculadora de Investimentos Grátis">
     <meta property="og:url" content="https://compoundcalc.ai/pt/">
     <meta property="og:locale" content="pt_BR">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "O que são juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Juros compostos são calculados sobre seu capital inicial e também sobre os juros acumulados de períodos anteriores. Diferente dos juros simples, seu dinheiro cresce exponencialmente."}},
+        {"@type": "Question", "name": "Com que frequência os juros devem ser compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Composição mais frequente gera retornos maiores. Composição diária rende um pouco mais que mensal, mas a diferença é mínima para a maioria dos investimentos."}},
+        {"@type": "Question", "name": "O que é a Regra dos 72?", "acceptedAnswer": {"@type": "Answer", "text": "A Regra dos 72 é uma forma rápida de estimar quanto tempo leva para dobrar seu dinheiro. Divida 72 pela taxa de juros: a 7%, seu dinheiro dobra em aproximadamente 10,3 anos."}},
+        {"@type": "Question", "name": "Por que devo começar a investir cedo?", "acceptedAnswer": {"@type": "Answer", "text": "Devido aos juros compostos, começar 10 anos antes pode dobrar seu montante final. O tempo é seu maior aliado na construção de riqueza."}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>Juros Ganhos</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">Crescimento ao Longo do Tempo</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> Regra dos 72</h3>
+                        <p class="text-white/60 text-sm mb-2">A <span id="ruleRate" class="text-emerald-400 font-semibold">7%</span> de juros, seu dinheiro dobra em:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 anos</p>
+                        <p class="text-white/40 text-xs mt-2">Fórmula: 72 ÷ taxa de juros = anos para dobrar</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Composto vs Juros Simples</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Juros Simples</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Juros Compostos</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">O que são Juros Compostos?</h2>
                 <p class="text-white/70 mb-4">Juros compostos são os juros calculados sobre o capital inicial e também sobre os juros acumulados de períodos anteriores.</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Perguntas Frequentes</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">O que são juros compostos?</h3><p class="text-white/70 mt-1">Juros compostos são calculados sobre seu capital inicial e também sobre os juros acumulados. Diferente dos juros simples, seu dinheiro cresce exponencialmente ao longo do tempo.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Com que frequência os juros devem ser compostos?</h3><p class="text-white/70 mt-1">Composição mais frequente gera retornos maiores. Composição diária rende um pouco mais que mensal, mas a diferença é mínima. O verdadeiro poder está no tempo.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Qual é um retorno realista?</h3><p class="text-white/70 mt-1">Poupança: 0,5-5%. Bolsa de valores (S&P 500): 7-10% ao ano. Títulos: 5-8%. Imóveis: 8-12%. Sempre considere a inflação (2-3%).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Por que devo começar a investir cedo?</h3><p class="text-white/70 mt-1">Devido aos juros compostos, começar 10 anos antes pode dobrar seu montante final. Uma pessoa de 25 anos investindo R$500/mês a 7% terá R$1,2M aos 65. Começando aos 35, apenas R$567K.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">O que é a Regra dos 72?</h3><p class="text-white/70 mt-1">A Regra dos 72 é uma forma rápida de estimar quanto tempo leva para dobrar seu dinheiro. Divida 72 pela taxa: a 7%, seu dinheiro dobra em cerca de 10,3 anos (72 ÷ 7 = 10,3).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Qual a diferença entre juros compostos e simples?</h3><p class="text-white/70 mt-1">Juros simples só incidem sobre o capital original. Juros compostos incidem sobre capital mais juros acumulados. Em 20 anos a 7%, R$10.000 crescem para R$24.000 com juros simples, mas R$38.700 com compostos.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Como aportes mensais afetam o crescimento?</h3><p class="text-white/70 mt-1">Aportes regulares aceleram dramaticamente a acumulação de riqueza. Apenas R$200/mês adicionados a R$10.000 a 7% por 20 anos transformam R$58.000 em depósitos em mais de R$150.000.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Juros compostos funcionam em dívidas também?</h3><p class="text-white/70 mt-1">Sim, e trabalham contra você. Dívidas de cartão a 20% crescem rapidamente por composição. Um saldo de R$5.000 com pagamentos mínimos pode levar 20+ anos e custar R$10.000+ em juros.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Qual a melhor conta para juros compostos?</h3><p class="text-white/70 mt-1">Para segurança: contas de alto rendimento (4-5%). Para crescimento: fundos de índice ou ETFs do S&P 500 (historicamente 7-10%). Contas com benefícios fiscais maximizam o crescimento composto.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Quão precisa é esta calculadora?</h3><p class="text-white/70 mt-1">Esta calculadora fornece projeções matemáticas precisas baseadas em retornos constantes. Investimentos reais flutuam. Use estes resultados para planejar, não como garantias.</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = 'Você ganha {amount} a mais com juros compostos!'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = ratePct + '%';
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' anos';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {

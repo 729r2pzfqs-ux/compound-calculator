@@ -20,6 +20,14 @@
     <meta property="og:title" content="Bileşik Faiz Hesaplayıcı | Ücretsiz Yatırım Hesaplayıcı">
     <meta property="og:url" content="https://compoundcalc.ai/tr/">
     <meta property="og:locale" content="tr_TR">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "Bileşik faiz nedir?", "acceptedAnswer": {"@type": "Answer", "text": "Bileşik faiz, ilk anaparanız ve önceki dönemlerden biriken faiz üzerinden hesaplanan faizdir. Basit faizin aksine, paranız katlanarak büyür."}},
+        {"@type": "Question", "name": "Faiz ne sıklıkla bileşik olmalı?", "acceptedAnswer": {"@type": "Answer", "text": "Daha sık bileşik, daha yüksek getiri sağlar. Günlük bileşik aylıktan biraz daha fazla kazandırır, ancak çoğu yatırım için fark minimumdur."}},
+        {"@type": "Question", "name": "72 Kuralı nedir?", "acceptedAnswer": {"@type": "Answer", "text": "72 Kuralı, paranızın ikiye katlanması için gereken süreyi hızlıca tahmin etmenin bir yoludur. 72'yi faiz oranına bölün: %7'de paranız yaklaşık 10,3 yılda ikiye katlanır."}},
+        {"@type": "Question", "name": "Neden erken yatırım yapmaya başlamalıyım?", "acceptedAnswer": {"@type": "Answer", "text": "Bileşik faiz sayesinde 10 yıl erken başlamak nihai miktarınızı ikiye katlayabilir. Zaman, servet oluşturmada en büyük varlığınızdır."}}
+    ]}
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -99,6 +107,10 @@
                         <div class="glass rounded-2xl p-5 text-center"><p class="text-white/60 text-sm mb-1"><svg class="w-4 h-4 text-emerald-400 inline mr-1"><use href="#icon-percent"/></svg>Kazanılan Faiz</p><p id="interestPercent" class="text-xl md:text-2xl font-bold text-emerald-400">100%</p></div>
                     </div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-4">Zaman İçinde Büyüme</h3><div class="h-64"><canvas id="growthChart"></canvas></div></div>
+                    <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="text-2xl">⚡</span> 72 Kuralı</h3>
+                        <p class="text-white/60 text-sm mb-2"><span id="ruleRate" class="text-emerald-400 font-semibold">%7</span> faizle paranız ikiye katlanır:</p>
+                        <p id="doubleYears" class="text-3xl font-bold text-emerald-400">10.3 yıl</p>
+                        <p class="text-white/40 text-xs mt-2">Formül: 72 ÷ faiz oranı = ikiye katlanma süresi</p></div>
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Bileşik vs Basit Faiz</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Basit Faiz</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Bileşik Faiz</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
@@ -109,6 +121,21 @@
                 <h2 class="text-2xl font-bold mb-4">Bileşik Faiz Nedir?</h2>
                 <p class="text-white/70 mb-4">Bileşik faiz, ilk anapara ve önceki dönemlerden biriken faiz üzerinden hesaplanan faizdir.</p>
                 <div class="bg-slate-800/50 rounded-xl p-4 font-mono text-center">A = P(1 + r/n)<sup>nt</sup></div>
+            </div>
+            <div class="mt-8 glass rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+                <div class="space-y-4">
+                    <div><h3 class="font-semibold text-emerald-400">Bileşik faiz nedir?</h3><p class="text-white/70 mt-1">Bileşik faiz, ilk anaparanız ve biriken faiz üzerinden hesaplanır. Basit faizin aksine, paranız zamanla katlanarak büyür.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Faiz ne sıklıkla bileşik olmalı?</h3><p class="text-white/70 mt-1">Daha sık bileşik, daha yüksek getiri sağlar. Günlük bileşik aylıktan biraz daha fazla kazandırır, ancak fark minimumdur. Gerçek güç zamandadır.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Gerçekçi bir getiri nedir?</h3><p class="text-white/70 mt-1">Tasarruf hesapları: %0,5-5. Borsa (S&P 500): yıllık %7-10. Tahviller: %5-8. Gayrimenkul: %8-12. Her zaman enflasyonu (%2-3) göz önünde bulundurun.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Neden erken yatırım yapmaya başlamalıyım?</h3><p class="text-white/70 mt-1">Bileşik faiz sayesinde 10 yıl erken başlamak nihai miktarınızı ikiye katlayabilir. 25 yaşında %7 ile ayda $500 yatıran biri 65'te $1,2M'a sahip olur. 35'te başlarsa sadece $567K.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">72 Kuralı nedir?</h3><p class="text-white/70 mt-1">72 Kuralı, paranızın ikiye katlanma süresini hızlıca tahmin etmenin bir yoludur. 72'yi orana bölün: %7'de paranız yaklaşık 10,3 yılda ikiye katlanır (72 ÷ 7 = 10,3).</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Bileşik ve basit faiz arasındaki fark nedir?</h3><p class="text-white/70 mt-1">Basit faiz sadece orijinal anaparaya uygulanır. Bileşik, anapara artı biriken faize uygulanır. 20 yılda %7'de, $10.000 basit faizle $24.000, bileşikle $38.700 olur.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Aylık katkılar büyümeyi nasıl etkiler?</h3><p class="text-white/70 mt-1">Düzenli katkılar servet birikimini hızlandırır. $10.000'lık yatırıma %7 ile 20 yıl boyunca ayda sadece $200 eklemek, $58.000 mevduatı $150.000'dan fazlaya dönüştürür.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Bileşik faiz borçlarda da çalışır mı?</h3><p class="text-white/70 mt-1">Evet ve aleyhinize çalışır. %20'lik kredi kartı borcu bileşik ile hızla büyür. $5.000'lık bakiye minimum ödemelerle 20+ yıl sürebilir ve $10.000+ faiz tutabilir.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Bileşik faiz için en iyi hesap hangisi?</h3><p class="text-white/70 mt-1">Güvenlik için: yüksek getirili tasarruf hesapları (%4-5). Büyüme için: S&P 500 endeks fonları veya ETF'ler (tarihsel olarak %7-10). Vergi avantajlı hesaplar bileşik büyümeyi maksimize eder.</p></div>
+                    <div><h3 class="font-semibold text-emerald-400">Bu hesap makinesi ne kadar doğru?</h3><p class="text-white/70 mt-1">Bu hesap makinesi sabit getirilere dayalı doğru matematiksel projeksiyonlar sağlar. Gerçek yatırımlar dalgalanır. Bu sonuçları planlama için kullanın, garanti olarak değil.</p></div>
+                </div>
             </div>
         </div>
     </main>
@@ -138,6 +165,9 @@
             document.getElementById('simpleInterest').textContent = formatCurrency(simple);
             document.getElementById('compoundValue').textContent = formatCurrency(totalFV);
             document.getElementById('extraEarned').textContent = 'Bileşik faizle {amount} daha fazla kazanırsınız!'.replace('{amount}', formatCurrency(totalFV - simple));
+            const ratePct = parseFloat(document.getElementById('rate').value) || 7;
+            document.getElementById('ruleRate').textContent = '%' + ratePct;
+            document.getElementById('doubleYears').textContent = (ratePct > 0 ? (72 / ratePct).toFixed(1) : '∞') + ' yıl';
             updateChart(P, PMT, r, t, n);
         }
         function updateChart(P, PMT, r, t, n) {
