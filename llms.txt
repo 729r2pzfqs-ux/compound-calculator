@@ -1,0 +1,7 @@
+# compoundcalc.ai
+
+## About
+CompoundCalc.ai is a free compound interest calculator. Calculate investment growth, savings projections, and compare different compounding frequencies.
+
+## URLs
+- Homepage: https://compoundcalc.ai/
