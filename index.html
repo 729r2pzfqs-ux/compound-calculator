@@ -16,7 +16,7 @@
     
     
     <title>Compound Interest Calculator | Free Investment Growth Calculator</title>
-    <meta name="description" content="Free compound interest calculator. See how your investments grow over time with daily, monthly, or yearly compounding. Visualize your wealth building.">
+    <meta name="description" content="Free compound interest calculator with interactive charts. See how your savings and investments grow with monthly contributions and daily, monthly, or yearly compounding.">
     <meta name="keywords" content="compound interest calculator, investment calculator, savings calculator, interest rate calculator, compound growth">
     
     <!-- Canonical & Hreflang -->
@@ -54,9 +54,29 @@
         "@type": "WebApplication",
         "name": "Compound Interest Calculator",
         "url": "https://compoundcalc.ai/",
-        "description": "Free compound interest calculator with visual charts",
+        "description": "Free compound interest calculator with interactive charts. Model your investment growth with monthly contributions and daily, monthly, or yearly compounding.",
         "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Any"
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Compound interest calculation with adjustable compounding frequency",
+            "Monthly contribution modeling",
+            "Interactive growth chart",
+            "Comparison of compound versus simple interest",
+            "Available in 11 languages"
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "CompoundCalc.ai",
+            "url": "https://compoundcalc.ai/"
+        }
     }
     </script>
     
@@ -127,7 +147,7 @@
                 "name": "Does compound interest work on debt too?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, and it works against you. Credit card debt at 20% APR compounds, making balances grow rapidly. A $5,000 balance with minimum payments can take 20+ years to pay off and cost $10,000+ in interest."
+                    "text": "Yes, and it works against you. Credit card debt at a 20% annual percentage rate (APR) compounds, making balances grow rapidly. A $5,000 balance with minimum payments can take 20+ years to pay off and cost $10,000+ in interest."
                 }
             },
             {
@@ -135,7 +155,7 @@
                 "name": "What's the best account for compound interest?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For safety: high-yield savings accounts (4-5% APY). For growth: index funds or ETFs tracking the S&P 500 (historically 7-10%). Tax-advantaged accounts like 401(k) or IRA maximize compound growth by deferring taxes."
+                    "text": "For safety: high-yield savings accounts (4-5% annual percentage yield, or APY). For growth: index funds or ETFs tracking the S&P 500 (historically 7-10%). Tax-advantaged accounts like 401(k) or IRA maximize compound growth by deferring taxes."
                 }
             },
             {
@@ -157,7 +177,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -467,11 +487,11 @@
                     </div>
                     <div>
                         <h3 class="font-semibold text-emerald-400">Does compound interest work on debt too?</h3>
-                        <p class="text-white/70 mt-1">Yes, and it works against you. Credit card debt at 20% APR compounds, making balances grow rapidly. A $5,000 balance with minimum payments can take 20+ years to pay off and cost $10,000+ in interest.</p>
+                        <p class="text-white/70 mt-1">Yes, and it works against you. Credit card debt at a 20% annual percentage rate (APR) compounds, making balances grow rapidly. A $5,000 balance with minimum payments can take 20+ years to pay off and cost $10,000+ in interest.</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-emerald-400">What's the best account for compound interest?</h3>
-                        <p class="text-white/70 mt-1">For safety: high-yield savings accounts (4-5% APY). For growth: index funds or ETFs tracking the S&P 500 (historically 7-10%). Tax-advantaged accounts like 401(k) or IRA maximize compound growth by deferring taxes.</p>
+                        <p class="text-white/70 mt-1">For safety: high-yield savings accounts (4-5% annual percentage yield, or APY). For growth: index funds or ETFs tracking the S&P 500 (historically 7-10%). Tax-advantaged accounts like 401(k) or IRA maximize compound growth by deferring taxes.</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-emerald-400">How accurate is this compound interest calculator?</h3>
