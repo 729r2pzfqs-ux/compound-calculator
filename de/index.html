@@ -25,6 +25,11 @@
     <meta property="og:title" content="Zinseszinsrechner | Kostenloser Investitionsrechner">
     <meta property="og:url" content="https://compoundcalc.ai/de/">
     <meta property="og:locale" content="de_DE">
+    <meta property="og:description" content="Kostenloser Zinseszinsrechner. Sehen Sie, wie Ihre Investitionen mit täglicher, monatlicher oder jährlicher Verzinsung wachsen.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://compoundcalc.ai/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://compoundcalc.ai/android-chrome-512x512.png">
     <!-- Schema.org FAQPage -->
     <script type="application/ld+json">
     {
@@ -125,7 +130,7 @@
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Zinseszins vs Einfacher Zins</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Einfacher Zins</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Zinseszins</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
-                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">Sie verdienen {amount} mehr mit Zinseszins!</p></div>
+                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">Sie verdienen $110,464 mehr mit Zinseszins!</p></div>
                 </div>
             </div>
             <div class="mt-12 glass rounded-2xl p-6 md:p-8">
@@ -155,12 +160,12 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl font-bold mb-6 text-center">Mehr über Zinseszins erfahren</h2>
             <div class="grid md:grid-cols-2 gap-4">
-                <a href="/de/articles/compound-vs-simple/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
+                <a href="/articles/compound-vs-simple/de/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
                     <span class="text-2xl">⚖️</span>
                     <h3 class="font-semibold text-lg mt-2">Zinseszins vs. Einfacher Zins</h3>
                     <p class="text-slate-300 text-sm mt-1">Verstehen Sie die wichtigsten Unterschiede und wann welche Art Ihnen am meisten nützt.</p>
                 </a>
-                <a href="/de/articles/beginners-guide/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
+                <a href="/articles/beginners-guide/de/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
                     <span class="text-2xl">📚</span>
                     <h3 class="font-semibold text-lg mt-2">Einsteiger-Leitfaden zum Zinseszins</h3>
                     <p class="text-slate-300 text-sm mt-1">Erfahren Sie, warum Einstein ihn das 8. Weltwunder nannte.</p>
@@ -170,7 +175,7 @@
     </section>
 
     
-    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc</p></div></footer>
+    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc · <a href="/privacy/" class="underline hover:text-white/70">Datenschutz</a></p></div></footer>
     <script>
         let chart = null;
         function formatCurrency(value) { const c = document.getElementById('currency').value; return c + value.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
@@ -204,7 +209,7 @@
         function updateChart(P, PMT, r, t, n) {
             const labels = [], compoundData = [], depositData = [];
             for (let y = 0; y <= t; y++) {
-                labels.push('Year ' + y);
+                labels.push('Jahr ' + y);
                 const fvp = P * Math.pow(1 + r/n, n*y);
                 let fvc = 0;
                 if (PMT > 0 && r > 0) { const mr = r / 12; fvc = PMT * ((Math.pow(1 + mr, y*12) - 1) / mr); }
@@ -228,8 +233,5 @@
         document.addEventListener('click', () => document.getElementById('langDropdown').classList.add('hidden'));
         calculate();
     </script>
-<!-- GDPR Cookie Consent -->
-</div>
-</div>
 </body>
 </html>

@@ -25,6 +25,11 @@
     <meta property="og:title" content="复利计算器 | 免费投资增长计算器">
     <meta property="og:url" content="https://compoundcalc.ai/zh/">
     <meta property="og:locale" content="zh_CN">
+    <meta property="og:description" content="免费复利计算器。查看您的投资如何通过每日、每月或每年复利增长。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://compoundcalc.ai/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://compoundcalc.ai/android-chrome-512x512.png">
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": "什么是复利？", "acceptedAnswer": {"@type": "Answer", "text": "复利是根据您的初始本金和之前期间累积的利息计算的利息。与单利不同，复利使您的资金呈指数增长。"}},
@@ -119,7 +124,7 @@
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">复利 vs 单利</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">单利</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">复利</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
-                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">使用复利您可以多赚 {amount}！</p></div>
+                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">使用复利您可以多赚 $110,464！</p></div>
                 </div>
             </div>
             <div class="mt-12 glass rounded-2xl p-6 md:p-8">
@@ -149,12 +154,12 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl font-bold mb-6 text-center">了解复利</h2>
             <div class="grid md:grid-cols-2 gap-4">
-                <a href="/zh/articles/compound-vs-simple/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
+                <a href="/articles/compound-vs-simple/zh/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
                     <span class="text-2xl">⚖️</span>
                     <h3 class="font-semibold text-lg mt-2">复利与单利的区别</h3>
                     <p class="text-slate-300 text-sm mt-1">了解关键差异以及何时各种类型对您最有利。</p>
                 </a>
-                <a href="/zh/articles/beginners-guide/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
+                <a href="/articles/beginners-guide/zh/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
                     <span class="text-2xl">📚</span>
                     <h3 class="font-semibold text-lg mt-2">复利入门指南</h3>
                     <p class="text-slate-300 text-sm mt-1">了解为什么爱因斯坦称其为世界第八大奇迹。</p>
@@ -164,7 +169,7 @@
     </section>
 
     
-    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc</p></div></footer>
+    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc · <a href="/privacy/" class="underline hover:text-white/70">隐私政策</a></p></div></footer>
     <script>
         let chart = null;
         function formatCurrency(value) { const c = document.getElementById('currency').value; return c + value.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
@@ -198,7 +203,7 @@
         function updateChart(P, PMT, r, t, n) {
             const labels = [], compoundData = [], depositData = [];
             for (let y = 0; y <= t; y++) {
-                labels.push('Year ' + y);
+                labels.push(y + ' 年');
                 const fvp = P * Math.pow(1 + r/n, n*y);
                 let fvc = 0;
                 if (PMT > 0 && r > 0) { const mr = r / 12; fvc = PMT * ((Math.pow(1 + mr, y*12) - 1) / mr); }
@@ -222,8 +227,5 @@
         document.addEventListener('click', () => document.getElementById('langDropdown').classList.add('hidden'));
         calculate();
     </script>
-<!-- GDPR Cookie Consent -->
-</div>
-</div>
 </body>
 </html>

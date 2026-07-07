@@ -25,6 +25,11 @@
     <meta property="og:title" content="Calculadora de Juros Compostos | Calculadora de Investimentos Grátis">
     <meta property="og:url" content="https://compoundcalc.ai/pt/">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:description" content="Calculadora gratuita de juros compostos. Veja como seus investimentos crescem com capitalização diária, mensal ou anual.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://compoundcalc.ai/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://compoundcalc.ai/android-chrome-512x512.png">
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": "O que são juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Juros compostos são calculados sobre seu capital inicial e também sobre os juros acumulados de períodos anteriores. Diferente dos juros simples, seu dinheiro cresce exponencialmente."}},
@@ -119,7 +124,7 @@
                     <div class="glass rounded-2xl p-5"><h3 class="text-lg font-semibold mb-3">Composto vs Juros Simples</h3>
                         <div class="flex items-center gap-4"><div class="flex-1"><p class="text-white/60 text-sm">Juros Simples</p><p id="simpleInterest" class="text-xl font-bold text-white/80">$150,000</p></div>
                         <div class="text-emerald-400 text-2xl">→</div><div class="flex-1 text-right"><p class="text-white/60 text-sm">Juros Compostos</p><p id="compoundValue" class="text-xl font-bold text-emerald-400">$260,464</p></div></div>
-                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">Você ganha {amount} a mais com juros compostos!</p></div>
+                        <p id="extraEarned" class="text-center text-emerald-400 mt-3 text-sm">Você ganha $110,464 a mais com juros compostos!</p></div>
                 </div>
             </div>
             <div class="mt-12 glass rounded-2xl p-6 md:p-8">
@@ -149,12 +154,12 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl font-bold mb-6 text-center">Aprenda sobre Juros Compostos</h2>
             <div class="grid md:grid-cols-2 gap-4">
-                <a href="/pt/articles/compound-vs-simple/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
+                <a href="/articles/compound-vs-simple/pt/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
                     <span class="text-2xl">⚖️</span>
                     <h3 class="font-semibold text-lg mt-2">Juros Compostos vs Simples</h3>
                     <p class="text-slate-300 text-sm mt-1">Entenda as diferenças principais e quando cada tipo te beneficia mais.</p>
                 </a>
-                <a href="/pt/articles/beginners-guide/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
+                <a href="/articles/beginners-guide/pt/" class="glass rounded-xl p-6 hover:bg-white/10 transition">
                     <span class="text-2xl">📚</span>
                     <h3 class="font-semibold text-lg mt-2">Guia para Iniciantes</h3>
                     <p class="text-slate-300 text-sm mt-1">Descubra por que Einstein chamou de 8ª maravilha do mundo.</p>
@@ -164,7 +169,7 @@
     </section>
 
     
-    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc</p></div></footer>
+    <footer class="py-8 px-4 border-t border-white/10"><div class="max-w-5xl mx-auto text-center text-white/40 text-sm"><p>© 2026 CompoundCalc · <a href="/privacy/" class="underline hover:text-white/70">Privacidade</a></p></div></footer>
     <script>
         let chart = null;
         function formatCurrency(value) { const c = document.getElementById('currency').value; return c + value.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
@@ -198,7 +203,7 @@
         function updateChart(P, PMT, r, t, n) {
             const labels = [], compoundData = [], depositData = [];
             for (let y = 0; y <= t; y++) {
-                labels.push('Year ' + y);
+                labels.push('Ano ' + y);
                 const fvp = P * Math.pow(1 + r/n, n*y);
                 let fvc = 0;
                 if (PMT > 0 && r > 0) { const mr = r / 12; fvc = PMT * ((Math.pow(1 + mr, y*12) - 1) / mr); }
@@ -222,8 +227,5 @@
         document.addEventListener('click', () => document.getElementById('langDropdown').classList.add('hidden'));
         calculate();
     </script>
-<!-- GDPR Cookie Consent -->
-</div>
-</div>
 </body>
 </html>

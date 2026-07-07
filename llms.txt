@@ -5,3 +5,8 @@ CompoundCalc.ai is a free compound interest calculator. Calculate investment gro
 
 ## URLs
 - Homepage: https://compoundcalc.ai/
+- Compound vs Simple Interest article: https://compoundcalc.ai/articles/compound-vs-simple/
+- Beginner's Guide to Compound Interest: https://compoundcalc.ai/articles/beginners-guide/
+
+## Languages
+Available in English (/), German (/de/), Spanish (/es/), French (/fr/), Portuguese (/pt/), Chinese (/zh/), Japanese (/ja/), Hindi (/hi/), Arabic (/ar/), Russian (/ru/), and Turkish (/tr/). Articles have translations at /articles/<slug>/<lang>/.
